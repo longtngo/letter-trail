@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letter Trail - Transit Ops</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0c1118;
+        --panel: #141c27;
+        --line: #223043;
+        --ink: #eef4ff;
+        --muted: #90a4bf;
+        --amber: #ffc14d;
+        --green: #7bff87;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "IBM Plex Mono", monospace;
+        background: linear-gradient(180deg, #0a0f16, #0e1722);
+        color: var(--ink);
+        min-height: 100vh;
+        padding: 18px;
+      }
+
+      .terminal {
+        max-width: 1180px;
+        margin: 0 auto;
+        border: 1px solid var(--line);
+        background: var(--panel);
+        box-shadow: 0 20px 36px rgba(0, 0, 0, 0.35);
+      }
+
+      .marquee {
+        border-bottom: 1px solid var(--line);
+        padding: 10px 14px;
+        font-family: "Bebas Neue", cursive;
+        font-size: 1.35rem;
+        letter-spacing: 0.06em;
+        color: var(--amber);
+      }
+
+      .topgrid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+      }
+
+      .pane {
+        padding: 14px;
+        border-right: 1px solid var(--line);
+      }
+
+      .pane:last-child {
+        border-right: 0;
+      }
+
+      .rule {
+        margin: 0 0 10px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      select,
+      input,
+      button {
+        font: inherit;
+      }
+
+      select,
+      input {
+        background: #0e1621;
+        color: var(--ink);
+        border: 1px solid #2b3a4e;
+        border-radius: 0;
+        padding: 6px 8px;
+      }
+
+      .tiles {
+        display: grid;
+        grid-template-columns: repeat(3, 74px);
+        gap: 9px;
+        margin-bottom: 12px;
+      }
+
+      .tile {
+        border: 1px solid #365276;
+        background: #112035;
+        color: #d9e9ff;
+        font-family: "Bebas Neue", cursive;
+        font-size: 2.5rem;
+        letter-spacing: 0.04em;
+        display: grid;
+        place-items: center;
+      }
+
+      .entry {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+      }
+
+      button {
+        border: 1px solid #2d4869;
+        background: #17324d;
+        color: #d9ebff;
+        padding: 10px 14px;
+        border-radius: 0;
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      .mainbtn {
+        background: #294868;
+      }
+
+      .actions {
+        margin-top: 8px;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .status {
+        margin-top: 10px;
+        border: 1px solid #355b43;
+        color: var(--green);
+        background: rgba(123, 255, 135, 0.08);
+        padding: 9px 10px;
+      }
+
+      .counters {
+        display: grid;
+        gap: 8px;
+      }
+
+      .counter {
+        border: 1px solid #2f435f;
+        background: #0f1824;
+        padding: 10px;
+      }
+
+      .counter b {
+        display: block;
+        color: var(--muted);
+        font-size: 0.77rem;
+        margin-bottom: 6px;
+      }
+
+      .counter span {
+        font-family: "Bebas Neue", cursive;
+        font-size: 2rem;
+        letter-spacing: 0.04em;
+      }
+
+      .log {
+        border-top: 1px solid var(--line);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .module {
+        border-right: 1px solid var(--line);
+        padding: 12px;
+      }
+
+      .module:nth-child(2),
+      .module:last-child {
+        border-right: 0;
+      }
+
+      .module h2 {
+        margin: 0 0 8px;
+        font-size: 0.9rem;
+        color: var(--amber);
+        text-transform: uppercase;
+      }
+
+      .module ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.42;
+      }
+
+      .solutions {
+        grid-column: 1 / -1;
+        border-top: 1px solid var(--line);
+      }
+
+      @media (max-width: 980px) {
+        .topgrid {
+          grid-template-columns: 1fr;
+        }
+
+        .pane {
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .log {
+          grid-template-columns: 1fr;
+        }
+
+        .module {
+          border-right: 0;
+          border-top: 1px solid var(--line);
+        }
+      }
+
+      @media (max-width: 620px) {
+        body {
+          padding: 10px;
+        }
+
+        .entry {
+          grid-template-columns: 1fr;
+        }
+
+        .tiles {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="terminal">
+      <div class="marquee">LETTER TRAIL // TRANSIT OPERATIONS BOARD</div>
+
+      <section class="topgrid">
+        <div class="pane">
+          <p class="rule">
+            Enter
+            <select>
+              <option selected>a country name</option>
+              <option>a Pokemon name</option>
+              <option>an English word</option>
+              <option>a capital city name</option>
+            </select>
+            that contains all
+            <select>
+              <option>2</option>
+              <option selected>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+            </select>
+            letters in this exact order.
+          </p>
+
+          <div class="tiles">
+            <div class="tile">E</div>
+            <div class="tile">V</div>
+            <div class="tile">D</div>
+          </div>
+
+          <div class="entry">
+            <input type="text" placeholder="Type a name and press Enter" />
+            <button class="mainbtn">Submit</button>
+          </div>
+
+          <div class="actions">
+            <button class="mainbtn">Show All Solutions (3)</button>
+            <button>New Game</button>
+          </div>
+
+          <div class="status">Displayed 3 solution(s).</div>
+        </div>
+
+        <aside class="pane counters">
+          <article class="counter">
+            <b>SCORE</b>
+            <span>0000</span>
+          </article>
+          <article class="counter">
+            <b>ACCEPTED</b>
+            <span>00</span>
+          </article>
+          <article class="counter">
+            <b>WRONG</b>
+            <span>00</span>
+          </article>
+        </aside>
+      </section>
+
+      <section class="log">
+        <article class="module">
+          <h2>Accepted Words</h2>
+          <ul>
+            <li>No accepted words yet.</li>
+          </ul>
+        </article>
+
+        <article class="module">
+          <h2>Wrong Words</h2>
+          <ul>
+            <li>No wrong words yet.</li>
+          </ul>
+        </article>
+
+        <article class="module solutions">
+          <h2>All Solutions + Meaning</h2>
+          <ul>
+            <li><strong>Cape Verde</strong> - Country name.</li>
+            <li><strong>El Salvador</strong> - Country name.</li>
+            <li><strong>United States Virgin Islands</strong> - Country name.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

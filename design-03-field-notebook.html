@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letter Trail - Field Notebook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Nunito:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f8f3df;
+        --card: #fffdf4;
+        --ink: #2f2b20;
+        --muted: #6a6558;
+        --green: #3f6b2c;
+        --green-soft: #e8f4db;
+        --line: rgba(47, 43, 32, 0.2);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Nunito", sans-serif;
+        color: var(--ink);
+        min-height: 100vh;
+        background: repeating-linear-gradient(
+            0deg,
+            rgba(90, 84, 66, 0.04) 0,
+            rgba(90, 84, 66, 0.04) 2px,
+            transparent 2px,
+            transparent 38px
+          ),
+          var(--paper);
+        padding: 26px;
+      }
+
+      .board {
+        max-width: 1080px;
+        margin: 0 auto;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        box-shadow: 0 20px 36px rgba(67, 53, 26, 0.15);
+        padding: 22px;
+        position: relative;
+      }
+
+      .board::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 68px;
+        width: 2px;
+        background: rgba(180, 43, 43, 0.22);
+      }
+
+      .content {
+        margin-left: 84px;
+        display: grid;
+        gap: 12px;
+      }
+
+      h1 {
+        font-family: "Kalam", cursive;
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1;
+      }
+
+      .note {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .rule {
+        font-size: 1.08rem;
+        line-height: 1.4;
+      }
+
+      select,
+      input,
+      button {
+        font: inherit;
+      }
+
+      select {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 4px 8px;
+        background: #fff;
+      }
+
+      .tiles {
+        display: flex;
+        gap: 11px;
+      }
+
+      .tile {
+        width: 70px;
+        aspect-ratio: 1;
+        background: #fee9a6;
+        border: 1px solid #c79734;
+        border-radius: 8px;
+        box-shadow: 3px 3px 0 #c79734;
+        font-family: "Kalam", cursive;
+        font-size: 2rem;
+        font-weight: 700;
+        display: grid;
+        place-items: center;
+      }
+
+      .entry {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+      }
+
+      input {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: #fff;
+        padding: 12px;
+      }
+
+      button {
+        border: 0;
+        border-radius: 10px;
+        padding: 10px 16px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .submit {
+        background: var(--green);
+        color: #fff;
+      }
+
+      .tools {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .ghost {
+        background: #fff;
+        border: 1px solid var(--line);
+      }
+
+      .status {
+        background: var(--green-soft);
+        color: #335e21;
+        border: 1px solid rgba(63, 107, 44, 0.22);
+        border-radius: 12px;
+        padding: 10px 12px;
+        font-weight: 700;
+      }
+
+      .stats {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .badge {
+        border: 1px dashed var(--line);
+        background: #fff;
+        border-radius: 999px;
+        padding: 7px 12px;
+        font-weight: 800;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 12px;
+        padding: 12px;
+      }
+
+      .card h2 {
+        margin: 0 0 8px;
+        font-size: 1.05rem;
+        font-family: "Kalam", cursive;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      .wide {
+        grid-column: 1 / -1;
+      }
+
+      @media (max-width: 880px) {
+        .board::before {
+          display: none;
+        }
+
+        .content {
+          margin-left: 0;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 620px) {
+        body {
+          padding: 12px;
+        }
+
+        .entry {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="board">
+      <section class="content">
+        <h1>Letter Trail</h1>
+        <p class="note">Field notebook style for calmer focus and lower visual fatigue.</p>
+
+        <p class="rule">
+          Enter
+          <select>
+            <option selected>a country name</option>
+            <option>a Pokemon name</option>
+            <option>an English word</option>
+            <option>a capital city name</option>
+          </select>
+          that contains all
+          <select>
+            <option>2</option>
+            <option selected>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+          </select>
+          letters in this exact order.
+        </p>
+
+        <div class="tiles">
+          <div class="tile">E</div>
+          <div class="tile">V</div>
+          <div class="tile">D</div>
+        </div>
+
+        <div class="entry">
+          <input type="text" placeholder="Type a name and press Enter" />
+          <button class="submit">Submit</button>
+        </div>
+
+        <div class="tools">
+          <button class="submit">Show All Solutions (3)</button>
+          <button class="ghost">New Game</button>
+        </div>
+
+        <div class="status">Displayed 3 solution(s).</div>
+
+        <div class="stats">
+          <div class="badge">Score: 0</div>
+          <div class="badge">Accepted: 0</div>
+          <div class="badge">Wrong: 0</div>
+        </div>
+
+        <section class="grid">
+          <article class="card">
+            <h2>Accepted Words</h2>
+            <ul>
+              <li>No accepted words yet.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h2>Wrong Words</h2>
+            <ul>
+              <li>No wrong words yet.</li>
+            </ul>
+          </article>
+
+          <article class="card wide">
+            <h2>All Solutions + Meaning</h2>
+            <ul>
+              <li><strong>Cape Verde</strong> - Country name.</li>
+              <li><strong>El Salvador</strong> - Country name.</li>
+              <li><strong>United States Virgin Islands</strong> - Country name.</li>
+            </ul>
+          </article>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

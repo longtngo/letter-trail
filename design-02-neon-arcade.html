@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letter Trail - Neon Arcade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Chakra+Petch:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #040815;
+        --cyan: #13f0ff;
+        --lime: #a8ff35;
+        --orange: #ff9c32;
+        --ink: #d7e9ff;
+        --muted: #8ea6c7;
+        --panel: rgba(10, 19, 44, 0.72);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Chakra Petch", sans-serif;
+        color: var(--ink);
+        background: radial-gradient(circle at 20% 0%, #092035 0%, var(--bg) 42%),
+          linear-gradient(135deg, #03060d 0%, #050811 100%);
+        min-height: 100vh;
+        padding: 28px;
+      }
+
+      .shell {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: grid;
+        gap: 16px;
+      }
+
+      .header,
+      .surface,
+      .history {
+        border: 1px solid rgba(19, 240, 255, 0.35);
+        background: var(--panel);
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+          0 0 28px rgba(19, 240, 255, 0.12);
+        border-radius: 18px;
+      }
+
+      .header {
+        padding: 16px 18px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .title {
+        font-family: "Press Start 2P", cursive;
+        letter-spacing: 0.05em;
+        font-size: clamp(0.95rem, 2.1vw, 1.35rem);
+      }
+
+      .chipline {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .chip {
+        border: 1px solid rgba(168, 255, 53, 0.45);
+        color: var(--lime);
+        border-radius: 999px;
+        padding: 6px 12px;
+        font-weight: 700;
+      }
+
+      .surface {
+        padding: 18px;
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 16px;
+      }
+
+      .rule {
+        margin: 0 0 16px;
+        font-size: 1.02rem;
+        color: #b7ceec;
+      }
+
+      select,
+      input,
+      button {
+        font: inherit;
+      }
+
+      select {
+        background: #0e1732;
+        color: #e8f6ff;
+        border: 1px solid rgba(19, 240, 255, 0.4);
+        border-radius: 10px;
+        padding: 6px 9px;
+      }
+
+      .tiles {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 14px;
+      }
+
+      .tile {
+        width: 72px;
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        font-family: "Press Start 2P", cursive;
+        font-size: 1.8rem;
+        color: #031018;
+        background: linear-gradient(160deg, var(--cyan), #6df6ff);
+        border: 1px solid rgba(19, 240, 255, 0.55);
+        box-shadow: 0 0 24px rgba(19, 240, 255, 0.4);
+      }
+
+      .entry {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+      }
+
+      input {
+        width: 100%;
+        border: 1px solid rgba(19, 240, 255, 0.34);
+        border-radius: 12px;
+        padding: 13px;
+        background: #0b1531;
+        color: #f0f7ff;
+      }
+
+      button {
+        border: 0;
+        border-radius: 12px;
+        padding: 0 16px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .submit {
+        background: linear-gradient(145deg, var(--orange), #ffb761);
+        color: #281300;
+      }
+
+      .aux {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .aux button {
+        background: #15294f;
+        color: #d4e6ff;
+        border: 1px solid rgba(212, 230, 255, 0.2);
+        padding: 9px 14px;
+      }
+
+      .status {
+        margin-top: 10px;
+        border: 1px solid rgba(168, 255, 53, 0.35);
+        border-radius: 11px;
+        background: rgba(168, 255, 53, 0.08);
+        color: #ceff80;
+        padding: 10px 12px;
+        font-weight: 600;
+      }
+
+      .hud {
+        border-left: 1px solid rgba(19, 240, 255, 0.24);
+        padding-left: 16px;
+        display: grid;
+        gap: 12px;
+      }
+
+      .meter {
+        border: 1px solid rgba(255, 156, 50, 0.35);
+        border-radius: 12px;
+        padding: 12px;
+        background: rgba(255, 156, 50, 0.08);
+      }
+
+      .meter b {
+        font-family: "Press Start 2P", cursive;
+        font-size: 0.8rem;
+      }
+
+      .meter .value {
+        margin-top: 8px;
+        font-size: 1.7rem;
+        font-weight: 800;
+        color: #fff1d9;
+      }
+
+      .history {
+        padding: 16px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .panel {
+        border: 1px solid rgba(215, 233, 255, 0.15);
+        border-radius: 12px;
+        padding: 12px;
+        background: rgba(8, 14, 30, 0.55);
+      }
+
+      .panel h2 {
+        margin: 0 0 8px;
+        font-size: 1.02rem;
+        color: #f0f6ff;
+      }
+
+      .panel ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .solutions {
+        grid-column: 1 / -1;
+      }
+
+      @media (max-width: 960px) {
+        .surface {
+          grid-template-columns: 1fr;
+        }
+
+        .hud {
+          border-left: 0;
+          border-top: 1px solid rgba(19, 240, 255, 0.24);
+          padding-left: 0;
+          padding-top: 12px;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .history {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 620px) {
+        body {
+          padding: 14px;
+        }
+
+        .entry {
+          grid-template-columns: 1fr;
+        }
+
+        .submit {
+          min-height: 44px;
+        }
+
+        .hud {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="header">
+        <div class="title">LETTER TRAIL // ARCADE GRID</div>
+        <div class="chipline">
+          <div class="chip">Round 07</div>
+          <div class="chip">Theme: Countries</div>
+          <div class="chip">Letters: 3</div>
+        </div>
+      </header>
+
+      <section class="surface">
+        <div>
+          <p class="rule">
+            Enter
+            <select>
+              <option selected>a country name</option>
+              <option>a Pokemon name</option>
+              <option>an English word</option>
+              <option>a capital city name</option>
+            </select>
+            that contains all
+            <select>
+              <option>2</option>
+              <option selected>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+            </select>
+            letters in this exact order.
+          </p>
+
+          <div class="tiles">
+            <div class="tile">E</div>
+            <div class="tile">V</div>
+            <div class="tile">D</div>
+          </div>
+
+          <div class="entry">
+            <input type="text" placeholder="Type a name and press Enter" />
+            <button class="submit">Submit</button>
+          </div>
+
+          <div class="aux">
+            <button>Show All Solutions (3)</button>
+            <button>New Game</button>
+          </div>
+
+          <div class="status">Displayed 3 solution(s).</div>
+        </div>
+
+        <aside class="hud">
+          <article class="meter">
+            <b>SCORE</b>
+            <div class="value">000</div>
+          </article>
+          <article class="meter">
+            <b>ACCEPTED</b>
+            <div class="value">00</div>
+          </article>
+          <article class="meter">
+            <b>WRONG</b>
+            <div class="value">00</div>
+          </article>
+        </aside>
+      </section>
+
+      <section class="history">
+        <article class="panel">
+          <h2>Accepted Words</h2>
+          <ul>
+            <li>No accepted words yet.</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h2>Wrong Words</h2>
+          <ul>
+            <li>No wrong words yet.</li>
+          </ul>
+        </article>
+        <article class="panel solutions">
+          <h2>All Solutions + Meaning</h2>
+          <ul>
+            <li><strong>Cape Verde</strong> - Country name.</li>
+            <li><strong>El Salvador</strong> - Country name.</li>
+            <li><strong>United States Virgin Islands</strong> - Country name.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

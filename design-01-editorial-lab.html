@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letter Trail - Editorial Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f4f0e5;
+        --ink: #131722;
+        --muted: #5f6a7b;
+        --accent: #a6401e;
+        --accent-soft: #f7ded3;
+        --panel: rgba(255, 255, 255, 0.72);
+        --line: rgba(19, 23, 34, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        color: var(--ink);
+        background: radial-gradient(circle at 18% -8%, #fff9ef 0%, var(--paper) 58%);
+        min-height: 100vh;
+        padding: 28px;
+      }
+
+      .frame {
+        max-width: 1160px;
+        margin: 0 auto;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: var(--panel);
+        backdrop-filter: blur(12px);
+        padding: 26px;
+        box-shadow: 0 18px 50px rgba(20, 17, 10, 0.12);
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 300px minmax(0, 1fr);
+        gap: 24px;
+      }
+
+      .side {
+        border-right: 1px dashed var(--line);
+        padding-right: 22px;
+      }
+
+      .kicker {
+        font-size: 0.77rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2rem, 4vw, 3.1rem);
+        line-height: 0.95;
+      }
+
+      .deck {
+        margin: 0 0 20px;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .tips {
+        display: grid;
+        gap: 10px;
+      }
+
+      .tip {
+        border-left: 2px solid var(--accent);
+        background: #fff;
+        padding: 10px 12px;
+        border-radius: 0 12px 12px 0;
+        font-size: 0.92rem;
+      }
+
+      .tip strong {
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      .board {
+        display: grid;
+        gap: 14px;
+      }
+
+      .rule-line {
+        font-size: 1.1rem;
+        color: #293140;
+      }
+
+      .rule-line select {
+        font: inherit;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 5px 11px;
+        background: #fff;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .tiles {
+        display: flex;
+        gap: 10px;
+      }
+
+      .tile {
+        width: 70px;
+        aspect-ratio: 1;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        font-size: 2rem;
+        font-weight: 800;
+        background: linear-gradient(170deg, #fff2c9, #f3d78a);
+        border: 1px solid #bb9642;
+        color: #5a3a06;
+        box-shadow: 0 8px 16px rgba(90, 58, 6, 0.18);
+      }
+
+      .micro {
+        font-size: 0.86rem;
+        color: var(--muted);
+      }
+
+      .composer {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+      }
+
+      .composer input {
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 14px;
+        font-size: 1rem;
+        padding: 14px;
+      }
+
+      .btn {
+        border: 0;
+        border-radius: 14px;
+        padding: 0 18px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        cursor: pointer;
+      }
+
+      .btn.primary {
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .btn.ghost {
+        background: #fff;
+        border: 1px solid var(--line);
+      }
+
+      .controls {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .status {
+        border-radius: 12px;
+        padding: 11px 13px;
+        background: var(--accent-soft);
+        color: #5e2815;
+        font-weight: 600;
+      }
+
+      .stats {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .stat {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 8px 14px;
+        font-weight: 700;
+      }
+
+      .panels {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 14px;
+        padding: 12px 14px;
+      }
+
+      .panel h2 {
+        margin: 0 0 8px;
+        font-size: 1.04rem;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 18px;
+        line-height: 1.48;
+      }
+
+      @media (max-width: 920px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+
+        .side {
+          border-right: 0;
+          border-bottom: 1px dashed var(--line);
+          padding-right: 0;
+          padding-bottom: 18px;
+        }
+
+        .panels {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="frame">
+      <div class="layout">
+        <aside class="side">
+          <div class="kicker">Letter Puzzle Journal</div>
+          <h1>Letter Trail</h1>
+          <p class="deck">
+            Editorial-style gameplay surface. The left rail keeps strategy notes while the
+            main column keeps your move loop compact and readable.
+          </p>
+          <div class="tips">
+            <article class="tip">
+              <strong>Flow</strong>
+              Choose theme and letter count inline with instructions.
+            </article>
+            <article class="tip">
+              <strong>Speed</strong>
+              Input and submit remain in one single visual lane.
+            </article>
+            <article class="tip">
+              <strong>Awareness</strong>
+              Status and score stay above history so users act before scanning logs.
+            </article>
+          </div>
+        </aside>
+
+        <section class="board">
+          <p class="rule-line">
+            Enter
+            <select>
+              <option selected>a country name</option>
+              <option>a Pokemon name</option>
+              <option>an English word</option>
+              <option>a capital city name</option>
+            </select>
+            that contains all
+            <select>
+              <option>2</option>
+              <option selected>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+            </select>
+            letters in this exact order.
+          </p>
+
+          <div class="hero">
+            <div class="tiles">
+              <div class="tile">E</div>
+              <div class="tile">V</div>
+              <div class="tile">D</div>
+            </div>
+            <div class="micro">
+              Sequence hint: letters must appear in order, not necessarily adjacent.
+            </div>
+          </div>
+
+          <div class="composer">
+            <input type="text" placeholder="Type a name and press Enter" />
+            <button class="btn primary">Submit</button>
+          </div>
+
+          <div class="controls">
+            <button class="btn primary">Show All Solutions (3)</button>
+            <button class="btn ghost">New Game</button>
+          </div>
+
+          <div class="status">Displayed 3 solution(s).</div>
+
+          <div class="stats">
+            <div class="stat">Score: 0</div>
+            <div class="stat">Accepted: 0</div>
+            <div class="stat">Wrong: 0</div>
+          </div>
+
+          <div class="panels">
+            <article class="panel">
+              <h2>Accepted Words</h2>
+              <ul>
+                <li>No accepted words yet.</li>
+              </ul>
+            </article>
+            <article class="panel">
+              <h2>Wrong Words</h2>
+              <ul>
+                <li>No wrong words yet.</li>
+              </ul>
+            </article>
+          </div>
+
+          <article class="panel">
+            <h2>All Solutions + Meaning</h2>
+            <ul>
+              <li><strong>Cape Verde</strong> - Country name.</li>
+              <li><strong>El Salvador</strong> - Country name.</li>
+              <li><strong>United States Virgin Islands</strong> - Country name.</li>
+            </ul>
+          </article>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letter Trail - Notebook Iteration 02</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Nunito:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f3eecf;
+        --paper: #fffef6;
+        --ink: #2e2a22;
+        --muted: #696453;
+        --line: rgba(46, 42, 34, 0.16);
+        --teal: #2b7f77;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        padding: 24px;
+        font-family: "Nunito", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 90% -20%, rgba(255, 255, 255, 0.52), transparent 44%),
+          var(--bg);
+      }
+
+      .desk {
+        max-width: 1150px;
+        margin: 0 auto;
+        display: grid;
+        gap: 12px;
+      }
+
+      .header,
+      .main,
+      .foot {
+        border: 1px solid var(--line);
+        background: var(--paper);
+        border-radius: 14px;
+      }
+
+      .header {
+        padding: 14px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        line-height: 1;
+        font-family: "Shadows Into Light", cursive;
+      }
+
+      .meta {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .main {
+        padding: 15px;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 12px;
+      }
+
+      .rule {
+        margin: 0 0 10px;
+        line-height: 1.45;
+      }
+
+      select, input, button { font: inherit; }
+
+      select {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: #fff;
+        padding: 4px 8px;
+      }
+
+      .tiles {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .tile {
+        width: 68px;
+        aspect-ratio: 1;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        background: #fce6aa;
+        border: 1px solid #c29131;
+        box-shadow: 2px 2px 0 #c29131;
+        font-family: "Shadows Into Light", cursive;
+        font-size: 2.1rem;
+        font-weight: 700;
+      }
+
+      .entry {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 9px;
+      }
+
+      input {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 12px;
+        background: #fff;
+      }
+
+      button {
+        border: 0;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 800;
+        padding: 10px 14px;
+      }
+
+      .submit {
+        background: var(--teal);
+        color: #fff;
+      }
+
+      .controls {
+        margin-top: 8px;
+        display: flex;
+        gap: 9px;
+        flex-wrap: wrap;
+      }
+
+      .ghost {
+        border: 1px solid var(--line);
+        background: #fff;
+      }
+
+      .status {
+        margin-top: 9px;
+        border-radius: 10px;
+        border: 1px solid rgba(43, 127, 119, 0.2);
+        background: rgba(43, 127, 119, 0.11);
+        color: #1c5f58;
+        font-weight: 700;
+        padding: 9px 11px;
+      }
+
+      .notes {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .sticky {
+        min-height: 138px;
+        padding: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.09);
+        border-radius: 4px;
+        box-shadow: 0 8px 12px rgba(32, 27, 17, 0.14);
+      }
+
+      .s1 { background: #fff8a8; transform: rotate(-1.5deg); }
+      .s2 { background: #d9ffe1; transform: rotate(1.4deg); }
+      .s3 { background: #ffdede; transform: rotate(-0.7deg); }
+
+      .sticky h2 {
+        margin: 0 0 6px;
+        font-size: 1.02rem;
+        font-family: "Shadows Into Light", cursive;
+      }
+
+      .sticky ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      .score {
+        border: 1px dashed var(--line);
+        border-radius: 10px;
+        padding: 10px;
+        background: #fff;
+        display: grid;
+        gap: 8px;
+      }
+
+      .pill {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 6px 10px;
+        font-weight: 800;
+        background: #fff;
+      }
+
+      .foot {
+        padding: 12px;
+      }
+
+      .foot h2 {
+        margin: 0 0 8px;
+        font-size: 1.05rem;
+        font-family: "Shadows Into Light", cursive;
+      }
+
+      .foot ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      @media (max-width: 930px) {
+        .main {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        body { padding: 12px; }
+        .entry { grid-template-columns: 1fr; }
+        .notes { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="desk">
+      <header class="header">
+        <h1>Letter Trail</h1>
+        <div class="meta">Iteration 02: sticky-note history for easier scan/recall.</div>
+      </header>
+
+      <section class="main">
+        <div>
+          <p class="rule">
+            Enter
+            <select>
+              <option selected>a country name</option>
+              <option>a Pokemon name</option>
+              <option>an English word</option>
+              <option>a capital city name</option>
+            </select>
+            that contains all
+            <select>
+              <option>2</option>
+              <option selected>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+            </select>
+            letters in this exact order.
+          </p>
+
+          <div class="tiles">
+            <div class="tile">E</div>
+            <div class="tile">V</div>
+            <div class="tile">D</div>
+          </div>
+
+          <div class="entry">
+            <input type="text" placeholder="Type a name and press Enter" />
+            <button class="submit">Submit</button>
+          </div>
+
+          <div class="controls">
+            <button class="submit">Show All Solutions (3)</button>
+            <button class="ghost">New Game</button>
+          </div>
+
+          <div class="status">Displayed 3 solution(s).</div>
+        </div>
+
+        <aside class="score">
+          <div class="pill">Score: 0</div>
+          <div class="pill">Accepted: 0</div>
+          <div class="pill">Wrong: 0</div>
+          <div class="pill">Tip: press Enter to submit</div>
+        </aside>
+      </section>
+
+      <section class="notes">
+        <article class="sticky s1">
+          <h2>Accepted Words</h2>
+          <ul><li>No accepted words yet.</li></ul>
+        </article>
+        <article class="sticky s2">
+          <h2>Wrong Words</h2>
+          <ul><li>No wrong words yet.</li></ul>
+        </article>
+        <article class="sticky s3" style="grid-column: 1 / -1; min-height: 160px;">
+          <h2>All Solutions + Meaning</h2>
+          <ul>
+            <li><strong>Cape Verde</strong> - Country name.</li>
+            <li><strong>El Salvador</strong> - Country name.</li>
+            <li><strong>United States Virgin Islands</strong> - Country name.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="foot">
+        <h2>Round objective</h2>
+        <ul>
+          <li>Find words that preserve letter order.</li>
+          <li>Longer names produce higher score.</li>
+          <li>Wrong guesses are tracked so you do not repeat them.</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
