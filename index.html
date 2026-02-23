@@ -3,20 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Letter Trail Game</title>
+    <title>Letter Trail - Focus Lane</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Nunito:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
-        --bg: #f4efe6;
-        --card: #ffffff;
-        --ink: #1f2933;
-        --muted: #6a7685;
-        --accent: #14532d;
-        --accent-soft: #d1fae5;
-        --danger: #991b1b;
-        --danger-soft: #fee2e2;
-        --tile: #f8e9bf;
-        --tile-border: #b0893c;
-        --tile-text: #5b3a00;
+        --paper: #f7f1da;
+        --card: #fffdf4;
+        --ink: #2b271f;
+        --muted: #666152;
+        --line: rgba(43, 39, 31, 0.18);
+        --olive: #486a2e;
+        --olive-soft: #e8f5dc;
+        --tile: #f9e3a6;
+        --danger: #7f2622;
+        --danger-soft: #fbe6e4;
       }
 
       * {
@@ -29,34 +34,32 @@
 
       body {
         margin: 0;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        color: var(--ink);
-        background: radial-gradient(circle at top, #fffdf8 0%, var(--bg) 65%);
         min-height: 100vh;
-        display: grid;
-        place-items: center;
-        padding: 20px;
-      }
-
-      .app {
-        width: min(940px, 100%);
-        background: var(--card);
-        border: 1px solid #e6e2d9;
-        border-radius: 18px;
-        box-shadow: 0 16px 36px rgba(31, 41, 51, 0.12);
+        background:
+          repeating-linear-gradient(
+            0deg,
+            rgba(96, 86, 58, 0.045) 0,
+            rgba(96, 86, 58, 0.045) 2px,
+            transparent 2px,
+            transparent 34px
+          ),
+          var(--paper);
+        color: var(--ink);
+        font-family: "Nunito", sans-serif;
         padding: 24px;
       }
 
       .loader-screen {
-        width: min(480px, 100%);
+        max-width: 430px;
+        margin: 8vh auto 0;
         background: var(--card);
-        border: 1px solid #e6e2d9;
-        border-radius: 18px;
-        box-shadow: 0 16px 36px rgba(31, 41, 51, 0.12);
-        padding: 28px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        box-shadow: 0 16px 28px rgba(58, 49, 30, 0.12);
+        padding: 24px;
         display: grid;
         justify-items: center;
-        gap: 14px;
+        gap: 12px;
         text-align: center;
       }
 
@@ -64,8 +67,8 @@
         width: 44px;
         height: 44px;
         border-radius: 999px;
-        border: 4px solid #d6e0ea;
-        border-top-color: #243b53;
+        border: 4px solid rgba(72, 106, 46, 0.22);
+        border-top-color: var(--olive);
         animation: spin 0.9s linear infinite;
       }
 
@@ -77,7 +80,8 @@
 
       .loader-title {
         margin: 0;
-        font-size: 1.25rem;
+        font-family: "Kalam", cursive;
+        font-size: 1.8rem;
       }
 
       .loader-message {
@@ -85,164 +89,218 @@
         color: var(--muted);
       }
 
+      .board {
+        max-width: 1140px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 290px;
+        gap: 14px;
+      }
+
+      .panel {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        box-shadow: 0 16px 28px rgba(58, 49, 30, 0.12);
+      }
+
+      .play {
+        padding: 18px;
+        display: grid;
+        gap: 12px;
+      }
+
       h1 {
         margin: 0;
-        font-size: 1.8rem;
+        font-family: "Kalam", cursive;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        line-height: 1;
       }
 
-      .subtitle {
-        margin: 8px 0 20px;
+      .sub {
+        margin: 0;
         color: var(--muted);
+        font-size: 0.95rem;
       }
 
-      .subtitle select {
-        min-width: 0;
-        width: auto;
-        margin: 0 6px;
-        padding: 6px 8px;
-        font-size: 0.95rem;
-        vertical-align: baseline;
+      .rule {
+        margin: 0;
+        line-height: 1.45;
+      }
+
+      select,
+      input,
+      button {
+        font: inherit;
       }
 
       select {
-        min-width: 180px;
-        font-size: 0.95rem;
-        padding: 9px 10px;
+        border: 1px solid var(--line);
         border-radius: 10px;
-        border: 1px solid #c8d1dc;
+        padding: 4px 8px;
         background: #fff;
-        color: var(--ink);
+      }
+
+      .lane {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 12px;
+        align-items: center;
       }
 
       .tiles {
         display: flex;
-        gap: 12px;
-        margin-bottom: 18px;
+        gap: 10px;
       }
 
       .tile {
-        width: 68px;
-        height: 68px;
-        border-radius: 10px;
-        border: 1px solid var(--tile-border);
-        background: linear-gradient(180deg, #fff8dd 0%, var(--tile) 100%);
-        color: var(--tile-text);
-        font-size: 2rem;
-        font-weight: 800;
+        width: 70px;
+        aspect-ratio: 1;
         display: grid;
         place-items: center;
-        text-transform: uppercase;
-        box-shadow: 0 6px 14px rgba(91, 58, 0, 0.2);
+        background: var(--tile);
+        border: 1px solid #bf943a;
+        border-radius: 9px;
+        box-shadow: 3px 3px 0 #bf943a;
+        font-family: "Kalam", cursive;
+        font-size: 2rem;
+        font-weight: 700;
+        transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
+          color 0.2s ease;
       }
 
-      .input-row {
-        display: flex;
+      .tile.matched {
+        background: linear-gradient(180deg, #c9f5b5 0%, #a7e190 100%);
+        border-color: #5e9f50;
+        box-shadow: 3px 3px 0 #5e9f50;
+        color: #23471d;
+      }
+
+      .tip {
+        border-left: 2px solid var(--olive);
+        padding-left: 10px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .entry {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
         gap: 10px;
-        margin-bottom: 10px;
-        flex-wrap: wrap;
       }
 
-      input[type="text"] {
-        flex: 1;
-        min-width: 240px;
-        font-size: 1rem;
-        padding: 12px;
-        border-radius: 10px;
-        border: 1px solid #c8d1dc;
-        outline: none;
+      input {
+        border: 1px solid var(--line);
+        border-radius: 11px;
+        background: #fff;
+        padding: 13px;
       }
 
-      input[type="text"]:focus {
-        border-color: #2563eb;
-        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+      input:focus,
+      select:focus {
+        outline: 2px solid rgba(72, 106, 46, 0.28);
+        outline-offset: 1px;
       }
 
       button {
-        border: none;
-        border-radius: 10px;
-        padding: 10px 14px;
-        font-size: 0.95rem;
-        font-weight: 600;
-        background: #243b53;
-        color: white;
+        border: 0;
+        border-radius: 11px;
         cursor: pointer;
+        font-weight: 800;
+        padding: 11px 16px;
       }
 
-      button:hover {
-        filter: brightness(1.08);
-      }
-
-      button:disabled {
-        opacity: 0.5;
+      button:disabled,
+      input:disabled,
+      select:disabled {
+        opacity: 0.58;
         cursor: not-allowed;
       }
 
-      .actions {
+      .primary {
+        background: var(--olive);
+        color: #fff;
+      }
+
+      .row {
         display: flex;
+        flex-wrap: wrap;
         gap: 10px;
-        margin-bottom: 12px;
-        flex-wrap: wrap;
       }
 
-      .scoreboard {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-bottom: 12px;
-      }
-
-      .pill {
-        background: #f2f6fa;
-        border: 1px solid #d6e0ea;
-        border-radius: 999px;
-        padding: 8px 12px;
-        font-weight: 600;
+      .ghost {
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--ink);
       }
 
       .status {
-        min-height: 24px;
-        margin-bottom: 12px;
-        padding: 8px 10px;
-        border-radius: 8px;
-        background: #f4f5f7;
-        color: #2d3748;
+        background: #f2f3ef;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        color: #4f4a3f;
+        font-weight: 700;
+        padding: 9px 11px;
+        min-height: 44px;
+        display: grid;
+        align-items: center;
       }
 
       .status.success {
-        background: var(--accent-soft);
-        color: var(--accent);
+        background: var(--olive-soft);
+        border-color: rgba(72, 106, 46, 0.28);
+        color: #2f5720;
       }
 
       .status.error {
         background: var(--danger-soft);
+        border-color: rgba(127, 38, 34, 0.24);
         color: var(--danger);
       }
 
-      .columns {
+      .cards {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
+        gap: 10px;
       }
 
-      .panel {
-        border: 1px solid #dbe3ed;
+      .card {
+        border: 1px solid var(--line);
         border-radius: 12px;
-        padding: 12px;
-        background: #fafcff;
+        background: #fff;
+        padding: 11px;
       }
 
-      .panel h2 {
+      .card h2 {
         margin: 0 0 8px;
-        font-size: 1rem;
+        font-size: 1.02rem;
+        font-family: "Kalam", cursive;
       }
 
-      ul {
+      .solutions-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+
+      .solutions-head h2 {
+        margin: 0;
+      }
+
+      .card ul,
+      .card .solutions {
         margin: 0;
         padding-left: 18px;
       }
 
-      li {
-        margin: 5px 0;
+      .card li {
+        margin: 4px 0;
+      }
+
+      .card.wide {
+        grid-column: 1 / -1;
       }
 
       .solutions {
@@ -258,23 +316,82 @@
         color: var(--muted);
       }
 
-      @media (max-width: 760px) {
-        .columns {
+      .rail {
+        padding: 14px;
+        position: sticky;
+        top: 20px;
+        height: fit-content;
+        display: grid;
+        gap: 10px;
+      }
+
+      .stat {
+        border: 1px dashed var(--line);
+        border-radius: 10px;
+        background: #fff;
+        padding: 9px;
+      }
+
+      .stat b {
+        display: block;
+        font-size: 0.78rem;
+        color: var(--muted);
+        margin-bottom: 4px;
+      }
+
+      .stat span {
+        font-size: 1.5rem;
+        font-weight: 800;
+      }
+
+      .check {
+        border-top: 1px dashed var(--line);
+        padding-top: 10px;
+        font-size: 0.9rem;
+        color: var(--muted);
+        display: grid;
+        gap: 6px;
+      }
+
+      @media (max-width: 920px) {
+        body {
+          padding: 14px;
+        }
+
+        .board {
           grid-template-columns: 1fr;
         }
 
-        .tile {
-          width: 60px;
-          height: 60px;
-          font-size: 1.7rem;
+        .rail {
+          position: static;
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
-        select {
-          min-width: 140px;
+        .check {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 620px) {
+        body {
+          padding: 10px;
         }
 
-        .subtitle select {
-          margin: 4px 4px;
+        .lane {
+          grid-template-columns: 1fr;
+        }
+
+        .entry {
+          grid-template-columns: 1fr;
+        }
+
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .rail {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -286,74 +403,93 @@
       <p id="loaderMessage" class="loader-message">Loading game data...</p>
     </section>
 
-    <main id="app" class="app" hidden>
-      <h1>Letter Trail</h1>
-      <p id="ruleText" class="subtitle">
-        Enter
-        <select id="themeSelect" aria-label="Theme">
-          <option value="dictionary" selected>an English word</option>
-          <option value="pokemon">a Pokemon name</option>
-          <option value="countries">a country name</option>
-          <option value="capitals">a capital city name</option>
-        </select>
-        that contains all
-        <select id="letterCountSelect" aria-label="Number of letters">
-          <option value="2">2</option>
-          <option value="3" selected>3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-        letters in this exact order.
-      </p>
+    <main id="app" class="board" hidden>
+      <section class="panel play">
+        <h1>Letter Trail</h1>
+        <p class="sub">Focus lane layout with sticky score rail for faster play.</p>
 
-      <div id="tiles" class="tiles"></div>
+        <p class="rule">
+          Enter
+          <select id="themeSelect" aria-label="Theme">
+            <option value="countries" selected>a country name</option>
+            <option value="pokemon">a Pokemon name</option>
+            <option value="dictionary">an English word</option>
+            <option value="capitals">a capital city name</option>
+          </select>
+          that contains all
+          <select id="letterCountSelect" aria-label="Number of letters">
+            <option value="2">2</option>
+            <option value="3" selected>3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+          letters in this exact order.
+        </p>
 
-      <div class="input-row">
-        <input
-          id="wordInput"
-          type="text"
-          placeholder="Type your guess and press Enter"
-          autocomplete="off"
-        />
-        <button id="submitBtn" type="button">Submit</button>
-      </div>
+        <div class="lane">
+          <div id="tiles" class="tiles"></div>
+          <div class="tip">Try long names first to maximize points.</div>
+        </div>
 
-      <div class="actions">
-        <button id="showSolutionsBtn" type="button">Show All Solutions (0)</button>
-        <button id="newGameBtn" type="button">New Game</button>
-      </div>
+        <div class="entry">
+          <input
+            id="wordInput"
+            type="text"
+            placeholder="Type a name and press Enter"
+            autocomplete="off"
+          />
+          <button id="submitBtn" type="button" class="primary">Submit</button>
+          <button id="newGameBtn" type="button" class="ghost">New Game</button>
+        </div>
 
-      <div id="status" class="status">Loading game...</div>
+        <div id="status" class="status">Loading game...</div>
 
-      <section class="scoreboard">
-        <div class="pill">Score: <span id="score">0</span></div>
-        <div class="pill">Accepted: <span id="acceptedCount">0</span></div>
-        <div class="pill">Wrong: <span id="wrongCount">0</span></div>
+        <section class="cards">
+          <article class="card">
+            <h2>Accepted Words</h2>
+            <ul id="acceptedList">
+              <li>No accepted words yet.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h2>Wrong Words</h2>
+            <ul id="wrongList">
+              <li>No wrong words yet.</li>
+            </ul>
+          </article>
+          <article class="card wide">
+            <div class="solutions-head">
+              <h2>All Solutions + Meaning</h2>
+              <button id="showSolutionsBtn" type="button" class="primary">
+                Show All Solutions (0)
+              </button>
+            </div>
+            <div id="solutionsBox" class="solutions"></div>
+          </article>
+        </section>
       </section>
 
-      <section class="columns">
-        <article class="panel">
-          <h2>Accepted Words</h2>
-          <ul id="acceptedList">
-            <li>No accepted words yet.</li>
-          </ul>
-        </article>
-
-        <article class="panel">
-          <h2>Wrong Words</h2>
-          <ul id="wrongList">
-            <li>No wrong words yet.</li>
-          </ul>
-        </article>
-      </section>
-
-      <section class="panel" style="margin-top: 16px">
-        <h2>All Solutions + Meaning</h2>
-        <div id="solutionsBox" class="solutions">Click "Show All Solutions".</div>
-      </section>
+      <aside class="panel rail">
+        <div class="stat">
+          <b>Score</b>
+          <span id="score">0</span>
+        </div>
+        <div class="stat">
+          <b>Accepted</b>
+          <span id="acceptedCount">0</span>
+        </div>
+        <div class="stat">
+          <b>Wrong</b>
+          <span id="wrongCount">0</span>
+        </div>
+        <div class="check">
+          <div>1. Keep letter order.</div>
+          <div>2. Avoid duplicate guesses.</div>
+          <div>3. Use Show All to inspect misses.</div>
+        </div>
+      </aside>
     </main>
-
     <script>
       const appEl = document.getElementById("app");
       const loaderEl = document.getElementById("loader");
@@ -437,6 +573,7 @@
       let wrongGuesses = [];
       let totalScore = 0;
       let isBusy = false;
+      let hasRevealedSolutions = false;
 
       let currentThemeId = themeSelect.value;
       let letterCount = Number(letterCountSelect.value);
@@ -445,6 +582,36 @@
       let activeMetaByWord = {};
       let meaningCache = {};
       const themeEntriesMemory = {};
+
+      function syncEntryControls() {
+        const shouldDisableEntry = isBusy || hasRevealedSolutions;
+        wordInput.disabled = shouldDisableEntry;
+        updateTileMatchPreview();
+
+        if (shouldDisableEntry) {
+          submitBtn.disabled = true;
+          return;
+        }
+
+        submitBtn.disabled = !hasAllLettersMatchedInInput();
+      }
+
+      function hasAllLettersMatchedInInput() {
+        if (!targetLetters.length) {
+          return false;
+        }
+        const typedWord = normalizeForMatch(wordInput.value);
+        return getMatchedLetterCount(typedWord, targetLetters) === targetLetters.length;
+      }
+
+      function updateTileMatchPreview() {
+        const typedWord = normalizeForMatch(wordInput.value);
+        const matchedCount = getMatchedLetterCount(typedWord, targetLetters);
+        const tileEls = tilesEl.querySelectorAll(".tile");
+        tileEls.forEach((tileEl, index) => {
+          tileEl.classList.toggle("matched", index < matchedCount);
+        });
+      }
 
       function showLoader(message) {
         loaderEl.hidden = false;
@@ -594,6 +761,92 @@
         return true;
       }
 
+      function getMatchedLetterCount(word, letters) {
+        if (!word || !letters.length) {
+          return 0;
+        }
+
+        let fromIndex = 0;
+        let count = 0;
+        for (const letter of letters) {
+          const index = word.indexOf(letter, fromIndex);
+          if (index === -1) {
+            break;
+          }
+          count += 1;
+          fromIndex = index + 1;
+        }
+        return count;
+      }
+
+      function levenshteinDistance(a, b) {
+        if (a === b) {
+          return 0;
+        }
+        if (!a.length) {
+          return b.length;
+        }
+        if (!b.length) {
+          return a.length;
+        }
+
+        let previousRow = new Array(b.length + 1);
+        let currentRow = new Array(b.length + 1);
+
+        for (let j = 0; j <= b.length; j += 1) {
+          previousRow[j] = j;
+        }
+
+        for (let i = 1; i <= a.length; i += 1) {
+          currentRow[0] = i;
+          const aCode = a.charCodeAt(i - 1);
+
+          for (let j = 1; j <= b.length; j += 1) {
+            const cost = aCode === b.charCodeAt(j - 1) ? 0 : 1;
+            currentRow[j] = Math.min(
+              previousRow[j] + 1,
+              currentRow[j - 1] + 1,
+              previousRow[j - 1] + cost
+            );
+          }
+
+          const swap = previousRow;
+          previousRow = currentRow;
+          currentRow = swap;
+        }
+
+        return previousRow[b.length];
+      }
+
+      function fuzzySimilarityPercent(a, b) {
+        const maxLength = Math.max(a.length, b.length);
+        if (!maxLength) {
+          return 100;
+        }
+
+        const distance = levenshteinDistance(a, b);
+        const similarity = ((maxLength - distance) / maxLength) * 100;
+        return Math.max(0, Math.round(similarity));
+      }
+
+      function getClosestSolutionPercent(word) {
+        if (!word || !solutions.length) {
+          return 0;
+        }
+
+        let best = 0;
+        for (const solutionWord of solutions) {
+          const percent = fuzzySimilarityPercent(word, solutionWord);
+          if (percent > best) {
+            best = percent;
+          }
+          if (best === 100) {
+            break;
+          }
+        }
+        return best;
+      }
+
       function titleCaseFromDashText(value) {
         return (value || "")
           .split("-")
@@ -617,10 +870,9 @@
         isBusy = value;
         showSolutionsBtn.disabled = value;
         newGameBtn.disabled = value;
-        submitBtn.disabled = value;
         themeSelect.disabled = value;
         letterCountSelect.disabled = value;
-        wordInput.disabled = value;
+        syncEntryControls();
       }
 
       function updateRuleText() {
@@ -673,7 +925,7 @@
 
         wrongGuesses.forEach((item) => {
           const li = document.createElement("li");
-          li.textContent = `${item.word} (${item.reason})`;
+          li.textContent = `${item.word} - ${item.closestPercent}% matched`;
           wrongListEl.appendChild(li);
         });
       }
@@ -990,12 +1242,21 @@
       }
 
       function rejectGuess(inputWord, dedupeKey, reason) {
+        const closestPercent = getClosestSolutionPercent(dedupeKey);
         if (!wrongGuesses.some((item) => item.key === dedupeKey)) {
-          wrongGuesses.push({ key: dedupeKey, word: inputWord, reason });
+          wrongGuesses.push({
+            key: dedupeKey,
+            word: inputWord,
+            reason,
+            closestPercent,
+          });
         }
         renderWrongWords();
         renderScoreboard();
-        setStatus(`Rejected "${inputWord}": ${reason}`, "error");
+        setStatus(
+          `Rejected "${inputWord}": ${reason} Closest solution match: ${closestPercent}%.`,
+          "error"
+        );
         wordInput.focus();
         wordInput.select();
       }
@@ -1041,7 +1302,7 @@
             setStatus(
               `New game ready. Letters: ${letters
                 .join(" ")
-                .toUpperCase()} (${roundSolutions.length} solutions found).`
+                .toUpperCase()}.`
             );
             wordInput.focus();
             return;
@@ -1058,7 +1319,7 @@
           setStatus(
             `New game ready. Letters: ${fallback.letters
               .join(" ")
-              .toUpperCase()} (${fallback.solutions.length} solutions found).`
+              .toUpperCase()}.`
           );
           wordInput.focus();
           return;
@@ -1083,10 +1344,12 @@
         wrongGuesses = [];
         totalScore = 0;
         meaningCache = {};
+        hasRevealedSolutions = false;
         wordInput.value = "";
 
         updateRuleText();
-        solutionsBoxEl.textContent = 'Click "Show All Solutions".';
+        showSolutionsBtn.hidden = false;
+        solutionsBoxEl.textContent = "";
         updateSolutionsButtonLabel();
         updateAllLists();
         renderTiles();
@@ -1108,6 +1371,14 @@
 
       async function submitGuess() {
         if (isBusy || !targetLetters.length) {
+          return;
+        }
+
+        if (!hasAllLettersMatchedInInput()) {
+          setStatus(
+            `Match all ${targetLetters.length} letters in order before submitting.`,
+            "error"
+          );
           return;
         }
 
@@ -1162,6 +1433,7 @@
         setStatus(`Accepted "${displayWord}" (+${points} points).`, "success");
         wordInput.value = "";
         wordInput.focus();
+        syncEntryControls();
         updateAllLists();
       }
 
@@ -1171,6 +1443,9 @@
           return;
         }
 
+        hasRevealedSolutions = true;
+        syncEntryControls();
+        showSolutionsBtn.hidden = true;
         setStatus("Loading meanings for all solutions...");
         setBusyState(true);
 
@@ -1223,8 +1498,14 @@
       wordInput.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
           event.preventDefault();
-          submitGuess();
+          if (!submitBtn.disabled) {
+            submitGuess();
+          }
         }
+      });
+
+      wordInput.addEventListener("input", () => {
+        syncEntryControls();
       });
 
       submitBtn.addEventListener("click", submitGuess);

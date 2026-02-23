@@ -4,13 +4,11 @@ A word puzzle game where players must find words that contain a generated letter
 
 The project includes:
 
-- A fully functional game UI (`index2.html`)
-- Earlier working version (`index.html`)
-- Multiple design explorations (`design-*.html`)
+- A fully functional game UI (`index.html`)
 
 ## Quick Start
 
-Open `/index2.html` directly in your browser.
+Open `/index.html` directly in your browser.
 
 ## Game Rules
 
@@ -51,17 +49,8 @@ Open `/index2.html` directly in your browser.
 
 ## Project Files
 
-- `index2.html`: current functional game with the chosen design iteration
-- `index.html`: previous full game implementation
-- `design-01-editorial-lab.html`
-- `design-02-neon-arcade.html`
-- `design-03-field-notebook.html`
-- `design-03-iteration-01-focus-lane.html`
-- `design-03-iteration-02-sticky-notes.html`
-- `design-03-iteration-03-tabbed-ledger.html`
-- `design-03-iteration-04-mobile-first-stack.html`
-- `design-04-brutalist-workbench.html`
-- `design-05-transit-ops.html`
+- `index.html`: current functional game
+- `README.md`: project documentation
 
 ## Notes
 
