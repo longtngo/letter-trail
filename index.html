@@ -222,12 +222,6 @@
         color: #fff;
       }
 
-      .row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
       .ghost {
         border: 1px solid var(--line);
         background: #fff;
@@ -519,22 +513,10 @@
       const DICTIONARY_TARGET_SIZE = 65000;
 
       const THEMES = {
-        dictionary: {
-          label: "English Dictionary",
-          prompt: "an English word",
-        },
-        pokemon: {
-          label: "Pokemon Names",
-          prompt: "a Pokemon name",
-        },
-        countries: {
-          label: "Country Names",
-          prompt: "a country name",
-        },
-        capitals: {
-          label: "Capital Cities",
-          prompt: "a capital city name",
-        },
+        dictionary: { label: "English Dictionary" },
+        pokemon: { label: "Pokemon Names" },
+        countries: { label: "Country Names" },
+        capitals: { label: "Capital Cities" },
       };
 
       const SCRABBLE_POINTS = {
@@ -903,31 +885,36 @@
       }
 
       function renderAcceptedWords() {
-        acceptedListEl.innerHTML = "";
-        if (!acceptedGuesses.length) {
-          acceptedListEl.innerHTML = "<li>No accepted words yet.</li>";
-          return;
-        }
-
-        acceptedGuesses.forEach((item) => {
-          const li = document.createElement("li");
-          li.textContent = `${item.displayWord} (+${item.points}) - ${item.meaning}`;
-          acceptedListEl.appendChild(li);
-        });
+        renderList(
+          acceptedListEl,
+          acceptedGuesses,
+          "No accepted words yet.",
+          (item) => `${item.displayWord} (+${item.points}) - ${item.meaning}`
+        );
       }
 
       function renderWrongWords() {
-        wrongListEl.innerHTML = "";
-        if (!wrongGuesses.length) {
-          wrongListEl.innerHTML = "<li>No wrong words yet.</li>";
+        renderList(
+          wrongListEl,
+          wrongGuesses,
+          "No wrong words yet.",
+          (item) => `${item.word} - ${item.closestPercent}% matched`
+        );
+      }
+
+      function renderList(listEl, items, emptyText, toText) {
+        listEl.innerHTML = "";
+        if (!items.length) {
+          listEl.innerHTML = `<li>${emptyText}</li>`;
           return;
         }
-
-        wrongGuesses.forEach((item) => {
+        const fragment = document.createDocumentFragment();
+        items.forEach((item) => {
           const li = document.createElement("li");
-          li.textContent = `${item.word} - ${item.closestPercent}% matched`;
-          wrongListEl.appendChild(li);
+          li.textContent = toText(item);
+          fragment.appendChild(li);
         });
+        listEl.appendChild(fragment);
       }
 
       function updateAllLists() {
@@ -1123,37 +1110,31 @@
           return themeEntriesMemory[themeId];
         }
 
-        let entries = [];
-        if (themeId === "dictionary") {
-          entries = await loadDictionaryEntries();
-        } else if (themeId === "pokemon") {
-          entries = await loadPokemonEntries();
-        } else if (themeId === "countries") {
-          entries = await loadGeoEntries("countries");
-        } else if (themeId === "capitals") {
-          entries = await loadGeoEntries("capitals");
-        }
+        const loaders = {
+          dictionary: loadDictionaryEntries,
+          pokemon: loadPokemonEntries,
+          countries: () => loadGeoEntries("countries"),
+          capitals: () => loadGeoEntries("capitals"),
+        };
+        const loader = loaders[themeId];
+        const entries = loader ? await loader() : [];
 
         themeEntriesMemory[themeId] = entries;
         return entries;
       }
 
       function setActiveEntries(entries) {
-        activeWords = [];
         activeMetaByWord = {};
-
-        entries.forEach((entry) => {
-          if (!entry || !entry.word || entry.word.length < 2) {
-            return;
-          }
-          activeWords.push(entry.word);
-          activeMetaByWord[entry.word] = {
-            display: entry.display || entry.word,
-            meaning: entry.meaning || "",
-          };
-        });
-
-        activeWords.sort((a, b) => a.localeCompare(b));
+        activeWords = entries
+          .filter((entry) => entry && entry.word && entry.word.length >= 2)
+          .map((entry) => {
+            activeMetaByWord[entry.word] = {
+              display: entry.display || entry.word,
+              meaning: entry.meaning || "",
+            };
+            return entry.word;
+          })
+          .sort((a, b) => a.localeCompare(b));
         activeWordSet = new Set(activeWords);
       }
 
