@@ -1,0 +1,977 @@
+[
+  {
+    "word": "afghanistan",
+    "display": "Afghanistan",
+    "meaning": "Country name."
+  },
+  {
+    "word": "albania",
+    "display": "Albania",
+    "meaning": "Country name."
+  },
+  {
+    "word": "algeria",
+    "display": "Algeria",
+    "meaning": "Country name."
+  },
+  {
+    "word": "andorra",
+    "display": "Andorra",
+    "meaning": "Country name."
+  },
+  {
+    "word": "angola",
+    "display": "Angola",
+    "meaning": "Country name."
+  },
+  {
+    "word": "antiguaandbarbuda",
+    "display": "Antigua and Barbuda",
+    "meaning": "Country name."
+  },
+  {
+    "word": "argentina",
+    "display": "Argentina",
+    "meaning": "Country name."
+  },
+  {
+    "word": "armenia",
+    "display": "Armenia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "australia",
+    "display": "Australia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "austria",
+    "display": "Austria",
+    "meaning": "Country name."
+  },
+  {
+    "word": "azerbaijan",
+    "display": "Azerbaijan",
+    "meaning": "Country name."
+  },
+  {
+    "word": "bahamas",
+    "display": "Bahamas",
+    "meaning": "Country name."
+  },
+  {
+    "word": "bahrain",
+    "display": "Bahrain",
+    "meaning": "Country name."
+  },
+  {
+    "word": "bangladesh",
+    "display": "Bangladesh",
+    "meaning": "Country name."
+  },
+  {
+    "word": "barbados",
+    "display": "Barbados",
+    "meaning": "Country name."
+  },
+  {
+    "word": "belarus",
+    "display": "Belarus",
+    "meaning": "Country name."
+  },
+  {
+    "word": "belgium",
+    "display": "Belgium",
+    "meaning": "Country name."
+  },
+  {
+    "word": "belize",
+    "display": "Belize",
+    "meaning": "Country name."
+  },
+  {
+    "word": "benin",
+    "display": "Benin",
+    "meaning": "Country name."
+  },
+  {
+    "word": "bhutan",
+    "display": "Bhutan",
+    "meaning": "Country name."
+  },
+  {
+    "word": "bolivia",
+    "display": "Bolivia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "bosniaandherzegovina",
+    "display": "Bosnia and Herzegovina",
+    "meaning": "Country name."
+  },
+  {
+    "word": "botswana",
+    "display": "Botswana",
+    "meaning": "Country name."
+  },
+  {
+    "word": "brazil",
+    "display": "Brazil",
+    "meaning": "Country name."
+  },
+  {
+    "word": "brunei",
+    "display": "Brunei",
+    "meaning": "Country name."
+  },
+  {
+    "word": "bulgaria",
+    "display": "Bulgaria",
+    "meaning": "Country name."
+  },
+  {
+    "word": "burkinafaso",
+    "display": "Burkina Faso",
+    "meaning": "Country name."
+  },
+  {
+    "word": "burundi",
+    "display": "Burundi",
+    "meaning": "Country name."
+  },
+  {
+    "word": "cambodia",
+    "display": "Cambodia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "cameroon",
+    "display": "Cameroon",
+    "meaning": "Country name."
+  },
+  {
+    "word": "canada",
+    "display": "Canada",
+    "meaning": "Country name."
+  },
+  {
+    "word": "capeverde",
+    "display": "Cape Verde",
+    "meaning": "Country name."
+  },
+  {
+    "word": "centralafrican",
+    "display": "Central African",
+    "meaning": "Country name."
+  },
+  {
+    "word": "chad",
+    "display": "Chad",
+    "meaning": "Country name."
+  },
+  {
+    "word": "chile",
+    "display": "Chile",
+    "meaning": "Country name."
+  },
+  {
+    "word": "china",
+    "display": "China",
+    "meaning": "Country name."
+  },
+  {
+    "word": "colombia",
+    "display": "Colombia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "comoros",
+    "display": "Comoros",
+    "meaning": "Country name."
+  },
+  {
+    "word": "costarica",
+    "display": "Costa Rica",
+    "meaning": "Country name."
+  },
+  {
+    "word": "croatia",
+    "display": "Croatia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "cuba",
+    "display": "Cuba",
+    "meaning": "Country name."
+  },
+  {
+    "word": "cyprus",
+    "display": "Cyprus",
+    "meaning": "Country name."
+  },
+  {
+    "word": "czechia",
+    "display": "Czechia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "denmark",
+    "display": "Denmark",
+    "meaning": "Country name."
+  },
+  {
+    "word": "djibouti",
+    "display": "Djibouti",
+    "meaning": "Country name."
+  },
+  {
+    "word": "dominica",
+    "display": "Dominica",
+    "meaning": "Country name."
+  },
+  {
+    "word": "dominican",
+    "display": "Dominican",
+    "meaning": "Country name."
+  },
+  {
+    "word": "drcongo",
+    "display": "DR Congo",
+    "meaning": "Country name."
+  },
+  {
+    "word": "ecuador",
+    "display": "Ecuador",
+    "meaning": "Country name."
+  },
+  {
+    "word": "egypt",
+    "display": "Egypt",
+    "meaning": "Country name."
+  },
+  {
+    "word": "elsalvador",
+    "display": "El Salvador",
+    "meaning": "Country name."
+  },
+  {
+    "word": "equatorialguinea",
+    "display": "Equatorial Guinea",
+    "meaning": "Country name."
+  },
+  {
+    "word": "eritrea",
+    "display": "Eritrea",
+    "meaning": "Country name."
+  },
+  {
+    "word": "estonia",
+    "display": "Estonia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "eswatini",
+    "display": "Eswatini",
+    "meaning": "Country name."
+  },
+  {
+    "word": "ethiopia",
+    "display": "Ethiopia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "fiji",
+    "display": "Fiji",
+    "meaning": "Country name."
+  },
+  {
+    "word": "finland",
+    "display": "Finland",
+    "meaning": "Country name."
+  },
+  {
+    "word": "france",
+    "display": "France",
+    "meaning": "Country name."
+  },
+  {
+    "word": "gabon",
+    "display": "Gabon",
+    "meaning": "Country name."
+  },
+  {
+    "word": "gambia",
+    "display": "Gambia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "georgia",
+    "display": "Georgia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "germany",
+    "display": "Germany",
+    "meaning": "Country name."
+  },
+  {
+    "word": "ghana",
+    "display": "Ghana",
+    "meaning": "Country name."
+  },
+  {
+    "word": "greece",
+    "display": "Greece",
+    "meaning": "Country name."
+  },
+  {
+    "word": "grenada",
+    "display": "Grenada",
+    "meaning": "Country name."
+  },
+  {
+    "word": "guatemala",
+    "display": "Guatemala",
+    "meaning": "Country name."
+  },
+  {
+    "word": "guinea",
+    "display": "Guinea",
+    "meaning": "Country name."
+  },
+  {
+    "word": "guineabissau",
+    "display": "Guinea-Bissau",
+    "meaning": "Country name."
+  },
+  {
+    "word": "guyana",
+    "display": "Guyana",
+    "meaning": "Country name."
+  },
+  {
+    "word": "haiti",
+    "display": "Haiti",
+    "meaning": "Country name."
+  },
+  {
+    "word": "honduras",
+    "display": "Honduras",
+    "meaning": "Country name."
+  },
+  {
+    "word": "hungary",
+    "display": "Hungary",
+    "meaning": "Country name."
+  },
+  {
+    "word": "iceland",
+    "display": "Iceland",
+    "meaning": "Country name."
+  },
+  {
+    "word": "india",
+    "display": "India",
+    "meaning": "Country name."
+  },
+  {
+    "word": "indonesia",
+    "display": "Indonesia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "iran",
+    "display": "Iran",
+    "meaning": "Country name."
+  },
+  {
+    "word": "iraq",
+    "display": "Iraq",
+    "meaning": "Country name."
+  },
+  {
+    "word": "ireland",
+    "display": "Ireland",
+    "meaning": "Country name."
+  },
+  {
+    "word": "israel",
+    "display": "Israel",
+    "meaning": "Country name."
+  },
+  {
+    "word": "italy",
+    "display": "Italy",
+    "meaning": "Country name."
+  },
+  {
+    "word": "ivorycoast",
+    "display": "Ivory Coast",
+    "meaning": "Country name."
+  },
+  {
+    "word": "jamaica",
+    "display": "Jamaica",
+    "meaning": "Country name."
+  },
+  {
+    "word": "japan",
+    "display": "Japan",
+    "meaning": "Country name."
+  },
+  {
+    "word": "jordan",
+    "display": "Jordan",
+    "meaning": "Country name."
+  },
+  {
+    "word": "kazakhstan",
+    "display": "Kazakhstan",
+    "meaning": "Country name."
+  },
+  {
+    "word": "kenya",
+    "display": "Kenya",
+    "meaning": "Country name."
+  },
+  {
+    "word": "kiribati",
+    "display": "Kiribati",
+    "meaning": "Country name."
+  },
+  {
+    "word": "kuwait",
+    "display": "Kuwait",
+    "meaning": "Country name."
+  },
+  {
+    "word": "kyrgyzstan",
+    "display": "Kyrgyzstan",
+    "meaning": "Country name."
+  },
+  {
+    "word": "laos",
+    "display": "Laos",
+    "meaning": "Country name."
+  },
+  {
+    "word": "latvia",
+    "display": "Latvia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "lebanon",
+    "display": "Lebanon",
+    "meaning": "Country name."
+  },
+  {
+    "word": "lesotho",
+    "display": "Lesotho",
+    "meaning": "Country name."
+  },
+  {
+    "word": "liberia",
+    "display": "Liberia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "libya",
+    "display": "Libya",
+    "meaning": "Country name."
+  },
+  {
+    "word": "liechtenstein",
+    "display": "Liechtenstein",
+    "meaning": "Country name."
+  },
+  {
+    "word": "lithuania",
+    "display": "Lithuania",
+    "meaning": "Country name."
+  },
+  {
+    "word": "luxembourg",
+    "display": "Luxembourg",
+    "meaning": "Country name."
+  },
+  {
+    "word": "madagascar",
+    "display": "Madagascar",
+    "meaning": "Country name."
+  },
+  {
+    "word": "malawi",
+    "display": "Malawi",
+    "meaning": "Country name."
+  },
+  {
+    "word": "malaysia",
+    "display": "Malaysia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "maldives",
+    "display": "Maldives",
+    "meaning": "Country name."
+  },
+  {
+    "word": "mali",
+    "display": "Mali",
+    "meaning": "Country name."
+  },
+  {
+    "word": "malta",
+    "display": "Malta",
+    "meaning": "Country name."
+  },
+  {
+    "word": "marshallislands",
+    "display": "Marshall Islands",
+    "meaning": "Country name."
+  },
+  {
+    "word": "mauritania",
+    "display": "Mauritania",
+    "meaning": "Country name."
+  },
+  {
+    "word": "mauritius",
+    "display": "Mauritius",
+    "meaning": "Country name."
+  },
+  {
+    "word": "mexico",
+    "display": "Mexico",
+    "meaning": "Country name."
+  },
+  {
+    "word": "micronesia",
+    "display": "Micronesia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "moldova",
+    "display": "Moldova",
+    "meaning": "Country name."
+  },
+  {
+    "word": "monaco",
+    "display": "Monaco",
+    "meaning": "Country name."
+  },
+  {
+    "word": "mongolia",
+    "display": "Mongolia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "montenegro",
+    "display": "Montenegro",
+    "meaning": "Country name."
+  },
+  {
+    "word": "morocco",
+    "display": "Morocco",
+    "meaning": "Country name."
+  },
+  {
+    "word": "mozambique",
+    "display": "Mozambique",
+    "meaning": "Country name."
+  },
+  {
+    "word": "myanmar",
+    "display": "Myanmar",
+    "meaning": "Country name."
+  },
+  {
+    "word": "namibia",
+    "display": "Namibia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "nauru",
+    "display": "Nauru",
+    "meaning": "Country name."
+  },
+  {
+    "word": "nepal",
+    "display": "Nepal",
+    "meaning": "Country name."
+  },
+  {
+    "word": "netherlands",
+    "display": "Netherlands",
+    "meaning": "Country name."
+  },
+  {
+    "word": "newzealand",
+    "display": "New Zealand",
+    "meaning": "Country name."
+  },
+  {
+    "word": "nicaragua",
+    "display": "Nicaragua",
+    "meaning": "Country name."
+  },
+  {
+    "word": "niger",
+    "display": "Niger",
+    "meaning": "Country name."
+  },
+  {
+    "word": "nigeria",
+    "display": "Nigeria",
+    "meaning": "Country name."
+  },
+  {
+    "word": "northkorea",
+    "display": "North Korea",
+    "meaning": "Country name."
+  },
+  {
+    "word": "northmacedonia",
+    "display": "North Macedonia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "norway",
+    "display": "Norway",
+    "meaning": "Country name."
+  },
+  {
+    "word": "oman",
+    "display": "Oman",
+    "meaning": "Country name."
+  },
+  {
+    "word": "pakistan",
+    "display": "Pakistan",
+    "meaning": "Country name."
+  },
+  {
+    "word": "palau",
+    "display": "Palau",
+    "meaning": "Country name."
+  },
+  {
+    "word": "palestine",
+    "display": "Palestine",
+    "meaning": "Country name."
+  },
+  {
+    "word": "panama",
+    "display": "Panama",
+    "meaning": "Country name."
+  },
+  {
+    "word": "papuanewguinea",
+    "display": "Papua New Guinea",
+    "meaning": "Country name."
+  },
+  {
+    "word": "paraguay",
+    "display": "Paraguay",
+    "meaning": "Country name."
+  },
+  {
+    "word": "peru",
+    "display": "Peru",
+    "meaning": "Country name."
+  },
+  {
+    "word": "philippines",
+    "display": "Philippines",
+    "meaning": "Country name."
+  },
+  {
+    "word": "poland",
+    "display": "Poland",
+    "meaning": "Country name."
+  },
+  {
+    "word": "portugal",
+    "display": "Portugal",
+    "meaning": "Country name."
+  },
+  {
+    "word": "qatar",
+    "display": "Qatar",
+    "meaning": "Country name."
+  },
+  {
+    "word": "congo",
+    "display": "Congo",
+    "meaning": "Country name."
+  },
+  {
+    "word": "romania",
+    "display": "Romania",
+    "meaning": "Country name."
+  },
+  {
+    "word": "russia",
+    "display": "Russia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "rwanda",
+    "display": "Rwanda",
+    "meaning": "Country name."
+  },
+  {
+    "word": "saintkittsandnevis",
+    "display": "Saint Kitts and Nevis",
+    "meaning": "Country name."
+  },
+  {
+    "word": "saintlucia",
+    "display": "Saint Lucia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "saintvincentandthegrenadines",
+    "display": "Saint Vincent and the Grenadines",
+    "meaning": "Country name."
+  },
+  {
+    "word": "samoa",
+    "display": "Samoa",
+    "meaning": "Country name."
+  },
+  {
+    "word": "sanmarino",
+    "display": "San Marino",
+    "meaning": "Country name."
+  },
+  {
+    "word": "saotomeandprincipe",
+    "display": "São Tomé and Príncipe",
+    "meaning": "Country name."
+  },
+  {
+    "word": "saudiarabia",
+    "display": "Saudi Arabia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "senegal",
+    "display": "Senegal",
+    "meaning": "Country name."
+  },
+  {
+    "word": "serbia",
+    "display": "Serbia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "seychelles",
+    "display": "Seychelles",
+    "meaning": "Country name."
+  },
+  {
+    "word": "sierraleone",
+    "display": "Sierra Leone",
+    "meaning": "Country name."
+  },
+  {
+    "word": "singapore",
+    "display": "Singapore",
+    "meaning": "Country name."
+  },
+  {
+    "word": "slovakia",
+    "display": "Slovakia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "slovenia",
+    "display": "Slovenia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "solomonislands",
+    "display": "Solomon Islands",
+    "meaning": "Country name."
+  },
+  {
+    "word": "somalia",
+    "display": "Somalia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "southafrica",
+    "display": "South Africa",
+    "meaning": "Country name."
+  },
+  {
+    "word": "southkorea",
+    "display": "South Korea",
+    "meaning": "Country name."
+  },
+  {
+    "word": "southsudan",
+    "display": "South Sudan",
+    "meaning": "Country name."
+  },
+  {
+    "word": "spain",
+    "display": "Spain",
+    "meaning": "Country name."
+  },
+  {
+    "word": "srilanka",
+    "display": "Sri Lanka",
+    "meaning": "Country name."
+  },
+  {
+    "word": "sudan",
+    "display": "Sudan",
+    "meaning": "Country name."
+  },
+  {
+    "word": "suriname",
+    "display": "Suriname",
+    "meaning": "Country name."
+  },
+  {
+    "word": "sweden",
+    "display": "Sweden",
+    "meaning": "Country name."
+  },
+  {
+    "word": "switzerland",
+    "display": "Switzerland",
+    "meaning": "Country name."
+  },
+  {
+    "word": "syria",
+    "display": "Syria",
+    "meaning": "Country name."
+  },
+  {
+    "word": "tajikistan",
+    "display": "Tajikistan",
+    "meaning": "Country name."
+  },
+  {
+    "word": "tanzania",
+    "display": "Tanzania",
+    "meaning": "Country name."
+  },
+  {
+    "word": "thailand",
+    "display": "Thailand",
+    "meaning": "Country name."
+  },
+  {
+    "word": "timorleste",
+    "display": "Timor-Leste",
+    "meaning": "Country name."
+  },
+  {
+    "word": "togo",
+    "display": "Togo",
+    "meaning": "Country name."
+  },
+  {
+    "word": "tonga",
+    "display": "Tonga",
+    "meaning": "Country name."
+  },
+  {
+    "word": "trinidadandtobago",
+    "display": "Trinidad and Tobago",
+    "meaning": "Country name."
+  },
+  {
+    "word": "tunisia",
+    "display": "Tunisia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "turkey",
+    "display": "Turkey",
+    "meaning": "Country name."
+  },
+  {
+    "word": "turkmenistan",
+    "display": "Turkmenistan",
+    "meaning": "Country name."
+  },
+  {
+    "word": "tuvalu",
+    "display": "Tuvalu",
+    "meaning": "Country name."
+  },
+  {
+    "word": "uganda",
+    "display": "Uganda",
+    "meaning": "Country name."
+  },
+  {
+    "word": "ukraine",
+    "display": "Ukraine",
+    "meaning": "Country name."
+  },
+  {
+    "word": "unitedarabemirates",
+    "display": "United Arab Emirates",
+    "meaning": "Country name."
+  },
+  {
+    "word": "unitedkingdom",
+    "display": "United Kingdom",
+    "meaning": "Country name."
+  },
+  {
+    "word": "unitedstates",
+    "display": "United States",
+    "meaning": "Country name."
+  },
+  {
+    "word": "uruguay",
+    "display": "Uruguay",
+    "meaning": "Country name."
+  },
+  {
+    "word": "uzbekistan",
+    "display": "Uzbekistan",
+    "meaning": "Country name."
+  },
+  {
+    "word": "vanuatu",
+    "display": "Vanuatu",
+    "meaning": "Country name."
+  },
+  {
+    "word": "vaticancity",
+    "display": "Vatican City",
+    "meaning": "Country name."
+  },
+  {
+    "word": "venezuela",
+    "display": "Venezuela",
+    "meaning": "Country name."
+  },
+  {
+    "word": "vietnam",
+    "display": "Vietnam",
+    "meaning": "Country name."
+  },
+  {
+    "word": "yemen",
+    "display": "Yemen",
+    "meaning": "Country name."
+  },
+  {
+    "word": "zambia",
+    "display": "Zambia",
+    "meaning": "Country name."
+  },
+  {
+    "word": "zimbabwe",
+    "display": "Zimbabwe",
+    "meaning": "Country name."
+  }
+]

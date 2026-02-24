@@ -1,0 +1,987 @@
+[
+  {
+    "word": "abudhabi",
+    "display": "Abu Dhabi",
+    "meaning": "Capital city of United Arab Emirates."
+  },
+  {
+    "word": "abuja",
+    "display": "Abuja",
+    "meaning": "Capital city of Nigeria."
+  },
+  {
+    "word": "accra",
+    "display": "Accra",
+    "meaning": "Capital city of Ghana."
+  },
+  {
+    "word": "addisababa",
+    "display": "Addis Ababa",
+    "meaning": "Capital city of Ethiopia."
+  },
+  {
+    "word": "algiers",
+    "display": "Algiers",
+    "meaning": "Capital city of Algeria."
+  },
+  {
+    "word": "amman",
+    "display": "Amman",
+    "meaning": "Capital city of Jordan."
+  },
+  {
+    "word": "amsterdam",
+    "display": "Amsterdam",
+    "meaning": "Capital city of Netherlands."
+  },
+  {
+    "word": "andorralavella",
+    "display": "Andorra la Vella",
+    "meaning": "Capital city of Andorra."
+  },
+  {
+    "word": "ankara",
+    "display": "Ankara",
+    "meaning": "Capital city of Turkey."
+  },
+  {
+    "word": "antananarivo",
+    "display": "Antananarivo",
+    "meaning": "Capital city of Madagascar."
+  },
+  {
+    "word": "apia",
+    "display": "Apia",
+    "meaning": "Capital city of Samoa."
+  },
+  {
+    "word": "ashgabat",
+    "display": "Ashgabat",
+    "meaning": "Capital city of Turkmenistan."
+  },
+  {
+    "word": "asmara",
+    "display": "Asmara",
+    "meaning": "Capital city of Eritrea."
+  },
+  {
+    "word": "astana",
+    "display": "Astana",
+    "meaning": "Capital city of Kazakhstan."
+  },
+  {
+    "word": "asuncion",
+    "display": "Asunción",
+    "meaning": "Capital city of Paraguay."
+  },
+  {
+    "word": "athens",
+    "display": "Athens",
+    "meaning": "Capital city of Greece."
+  },
+  {
+    "word": "baghdad",
+    "display": "Baghdad",
+    "meaning": "Capital city of Iraq."
+  },
+  {
+    "word": "baku",
+    "display": "Baku",
+    "meaning": "Capital city of Azerbaijan."
+  },
+  {
+    "word": "bamako",
+    "display": "Bamako",
+    "meaning": "Capital city of Mali."
+  },
+  {
+    "word": "bandarseribegawan",
+    "display": "Bandar Seri Begawan",
+    "meaning": "Capital city of Brunei."
+  },
+  {
+    "word": "bangkok",
+    "display": "Bangkok",
+    "meaning": "Capital city of Thailand."
+  },
+  {
+    "word": "bangui",
+    "display": "Bangui",
+    "meaning": "Capital city of Central African Republic."
+  },
+  {
+    "word": "banjul",
+    "display": "Banjul",
+    "meaning": "Capital city of Gambia."
+  },
+  {
+    "word": "basseterre",
+    "display": "Basseterre",
+    "meaning": "Capital city of Saint Kitts and Nevis."
+  },
+  {
+    "word": "beijing",
+    "display": "Beijing",
+    "meaning": "Capital city of China."
+  },
+  {
+    "word": "beirut",
+    "display": "Beirut",
+    "meaning": "Capital city of Lebanon."
+  },
+  {
+    "word": "belgrade",
+    "display": "Belgrade",
+    "meaning": "Capital city of Serbia."
+  },
+  {
+    "word": "belmopan",
+    "display": "Belmopan",
+    "meaning": "Capital city of Belize."
+  },
+  {
+    "word": "berlin",
+    "display": "Berlin",
+    "meaning": "Capital city of Germany."
+  },
+  {
+    "word": "bern",
+    "display": "Bern",
+    "meaning": "Capital city of Switzerland."
+  },
+  {
+    "word": "bishkek",
+    "display": "Bishkek",
+    "meaning": "Capital city of Kyrgyzstan."
+  },
+  {
+    "word": "bissau",
+    "display": "Bissau",
+    "meaning": "Capital city of Guinea-Bissau."
+  },
+  {
+    "word": "bloemfontein",
+    "display": "Bloemfontein",
+    "meaning": "Capital city of South Africa."
+  },
+  {
+    "word": "bogota",
+    "display": "Bogotá",
+    "meaning": "Capital city of Colombia."
+  },
+  {
+    "word": "brasilia",
+    "display": "Brasília",
+    "meaning": "Capital city of Brazil."
+  },
+  {
+    "word": "bratislava",
+    "display": "Bratislava",
+    "meaning": "Capital city of Slovakia."
+  },
+  {
+    "word": "brazzaville",
+    "display": "Brazzaville",
+    "meaning": "Capital city of Republic of the Congo."
+  },
+  {
+    "word": "bridgetown",
+    "display": "Bridgetown",
+    "meaning": "Capital city of Barbados."
+  },
+  {
+    "word": "brussels",
+    "display": "Brussels",
+    "meaning": "Capital city of Belgium."
+  },
+  {
+    "word": "bucharest",
+    "display": "Bucharest",
+    "meaning": "Capital city of Romania."
+  },
+  {
+    "word": "budapest",
+    "display": "Budapest",
+    "meaning": "Capital city of Hungary."
+  },
+  {
+    "word": "buenosaires",
+    "display": "Buenos Aires",
+    "meaning": "Capital city of Argentina."
+  },
+  {
+    "word": "cairo",
+    "display": "Cairo",
+    "meaning": "Capital city of Egypt."
+  },
+  {
+    "word": "canberra",
+    "display": "Canberra",
+    "meaning": "Capital city of Australia."
+  },
+  {
+    "word": "capetown",
+    "display": "Cape Town",
+    "meaning": "Capital city of South Africa."
+  },
+  {
+    "word": "caracas",
+    "display": "Caracas",
+    "meaning": "Capital city of Venezuela."
+  },
+  {
+    "word": "castries",
+    "display": "Castries",
+    "meaning": "Capital city of Saint Lucia."
+  },
+  {
+    "word": "chisinau",
+    "display": "Chișinău",
+    "meaning": "Capital city of Moldova."
+  },
+  {
+    "word": "cityofsanmarino",
+    "display": "City of San Marino",
+    "meaning": "Capital city of San Marino."
+  },
+  {
+    "word": "conakry",
+    "display": "Conakry",
+    "meaning": "Capital city of Guinea."
+  },
+  {
+    "word": "copenhagen",
+    "display": "Copenhagen",
+    "meaning": "Capital city of Denmark."
+  },
+  {
+    "word": "dakar",
+    "display": "Dakar",
+    "meaning": "Capital city of Senegal."
+  },
+  {
+    "word": "damascus",
+    "display": "Damascus",
+    "meaning": "Capital city of Syria."
+  },
+  {
+    "word": "dhaka",
+    "display": "Dhaka",
+    "meaning": "Capital city of Bangladesh."
+  },
+  {
+    "word": "dili",
+    "display": "Dili",
+    "meaning": "Capital city of Timor-Leste."
+  },
+  {
+    "word": "djibouti",
+    "display": "Djibouti",
+    "meaning": "Capital city of Djibouti."
+  },
+  {
+    "word": "dodoma",
+    "display": "Dodoma",
+    "meaning": "Capital city of Tanzania."
+  },
+  {
+    "word": "doha",
+    "display": "Doha",
+    "meaning": "Capital city of Qatar."
+  },
+  {
+    "word": "dublin",
+    "display": "Dublin",
+    "meaning": "Capital city of Ireland."
+  },
+  {
+    "word": "dushanbe",
+    "display": "Dushanbe",
+    "meaning": "Capital city of Tajikistan."
+  },
+  {
+    "word": "freetown",
+    "display": "Freetown",
+    "meaning": "Capital city of Sierra Leone."
+  },
+  {
+    "word": "funafuti",
+    "display": "Funafuti",
+    "meaning": "Capital city of Tuvalu."
+  },
+  {
+    "word": "gaborone",
+    "display": "Gaborone",
+    "meaning": "Capital city of Botswana."
+  },
+  {
+    "word": "georgetown",
+    "display": "Georgetown",
+    "meaning": "Capital city of Guyana."
+  },
+  {
+    "word": "gitega",
+    "display": "Gitega",
+    "meaning": "Capital city of Burundi."
+  },
+  {
+    "word": "guatemalacity",
+    "display": "Guatemala City",
+    "meaning": "Capital city of Guatemala."
+  },
+  {
+    "word": "hanoi",
+    "display": "Hanoi",
+    "meaning": "Capital city of Vietnam."
+  },
+  {
+    "word": "harare",
+    "display": "Harare",
+    "meaning": "Capital city of Zimbabwe."
+  },
+  {
+    "word": "havana",
+    "display": "Havana",
+    "meaning": "Capital city of Cuba."
+  },
+  {
+    "word": "helsinki",
+    "display": "Helsinki",
+    "meaning": "Capital city of Finland."
+  },
+  {
+    "word": "honiara",
+    "display": "Honiara",
+    "meaning": "Capital city of Solomon Islands."
+  },
+  {
+    "word": "islamabad",
+    "display": "Islamabad",
+    "meaning": "Capital city of Pakistan."
+  },
+  {
+    "word": "jakarta",
+    "display": "Jakarta",
+    "meaning": "Capital city of Indonesia."
+  },
+  {
+    "word": "jerusalem",
+    "display": "Jerusalem",
+    "meaning": "Capital city of Israel."
+  },
+  {
+    "word": "juba",
+    "display": "Juba",
+    "meaning": "Capital city of South Sudan."
+  },
+  {
+    "word": "kabul",
+    "display": "Kabul",
+    "meaning": "Capital city of Afghanistan."
+  },
+  {
+    "word": "kampala",
+    "display": "Kampala",
+    "meaning": "Capital city of Uganda."
+  },
+  {
+    "word": "kathmandu",
+    "display": "Kathmandu",
+    "meaning": "Capital city of Nepal."
+  },
+  {
+    "word": "khartoum",
+    "display": "Khartoum",
+    "meaning": "Capital city of Sudan."
+  },
+  {
+    "word": "kigali",
+    "display": "Kigali",
+    "meaning": "Capital city of Rwanda."
+  },
+  {
+    "word": "kingston",
+    "display": "Kingston",
+    "meaning": "Capital city of Jamaica."
+  },
+  {
+    "word": "kingstown",
+    "display": "Kingstown",
+    "meaning": "Capital city of Saint Vincent and the Grenadines."
+  },
+  {
+    "word": "kinshasa",
+    "display": "Kinshasa",
+    "meaning": "Capital city of DR Congo."
+  },
+  {
+    "word": "kualalumpur",
+    "display": "Kuala Lumpur",
+    "meaning": "Capital city of Malaysia."
+  },
+  {
+    "word": "kuwaitcity",
+    "display": "Kuwait City",
+    "meaning": "Capital city of Kuwait."
+  },
+  {
+    "word": "kyiv",
+    "display": "Kyiv",
+    "meaning": "Capital city of Ukraine."
+  },
+  {
+    "word": "libreville",
+    "display": "Libreville",
+    "meaning": "Capital city of Gabon."
+  },
+  {
+    "word": "lilongwe",
+    "display": "Lilongwe",
+    "meaning": "Capital city of Malawi."
+  },
+  {
+    "word": "lima",
+    "display": "Lima",
+    "meaning": "Capital city of Peru."
+  },
+  {
+    "word": "lisbon",
+    "display": "Lisbon",
+    "meaning": "Capital city of Portugal."
+  },
+  {
+    "word": "ljubljana",
+    "display": "Ljubljana",
+    "meaning": "Capital city of Slovenia."
+  },
+  {
+    "word": "lome",
+    "display": "Lomé",
+    "meaning": "Capital city of Togo."
+  },
+  {
+    "word": "london",
+    "display": "London",
+    "meaning": "Capital city of United Kingdom."
+  },
+  {
+    "word": "luanda",
+    "display": "Luanda",
+    "meaning": "Capital city of Angola."
+  },
+  {
+    "word": "lusaka",
+    "display": "Lusaka",
+    "meaning": "Capital city of Zambia."
+  },
+  {
+    "word": "luxembourg",
+    "display": "Luxembourg",
+    "meaning": "Capital city of Luxembourg."
+  },
+  {
+    "word": "madrid",
+    "display": "Madrid",
+    "meaning": "Capital city of Spain."
+  },
+  {
+    "word": "majuro",
+    "display": "Majuro",
+    "meaning": "Capital city of Marshall Islands."
+  },
+  {
+    "word": "malabo",
+    "display": "Malabo",
+    "meaning": "Capital city of Equatorial Guinea."
+  },
+  {
+    "word": "male",
+    "display": "Malé",
+    "meaning": "Capital city of Maldives."
+  },
+  {
+    "word": "managua",
+    "display": "Managua",
+    "meaning": "Capital city of Nicaragua."
+  },
+  {
+    "word": "manama",
+    "display": "Manama",
+    "meaning": "Capital city of Bahrain."
+  },
+  {
+    "word": "manila",
+    "display": "Manila",
+    "meaning": "Capital city of Philippines."
+  },
+  {
+    "word": "maputo",
+    "display": "Maputo",
+    "meaning": "Capital city of Mozambique."
+  },
+  {
+    "word": "maseru",
+    "display": "Maseru",
+    "meaning": "Capital city of Lesotho."
+  },
+  {
+    "word": "mbabane",
+    "display": "Mbabane",
+    "meaning": "Capital city of Eswatini."
+  },
+  {
+    "word": "mexicocity",
+    "display": "Mexico City",
+    "meaning": "Capital city of Mexico."
+  },
+  {
+    "word": "minsk",
+    "display": "Minsk",
+    "meaning": "Capital city of Belarus."
+  },
+  {
+    "word": "mogadishu",
+    "display": "Mogadishu",
+    "meaning": "Capital city of Somalia."
+  },
+  {
+    "word": "monaco",
+    "display": "Monaco",
+    "meaning": "Capital city of Monaco."
+  },
+  {
+    "word": "monrovia",
+    "display": "Monrovia",
+    "meaning": "Capital city of Liberia."
+  },
+  {
+    "word": "montevideo",
+    "display": "Montevideo",
+    "meaning": "Capital city of Uruguay."
+  },
+  {
+    "word": "moroni",
+    "display": "Moroni",
+    "meaning": "Capital city of Comoros."
+  },
+  {
+    "word": "moscow",
+    "display": "Moscow",
+    "meaning": "Capital city of Russia."
+  },
+  {
+    "word": "muscat",
+    "display": "Muscat",
+    "meaning": "Capital city of Oman."
+  },
+  {
+    "word": "nairobi",
+    "display": "Nairobi",
+    "meaning": "Capital city of Kenya."
+  },
+  {
+    "word": "nassau",
+    "display": "Nassau",
+    "meaning": "Capital city of Bahamas."
+  },
+  {
+    "word": "naypyidaw",
+    "display": "Naypyidaw",
+    "meaning": "Capital city of Myanmar."
+  },
+  {
+    "word": "ndjamena",
+    "display": "N'Djamena",
+    "meaning": "Capital city of Chad."
+  },
+  {
+    "word": "newdelhi",
+    "display": "New Delhi",
+    "meaning": "Capital city of India."
+  },
+  {
+    "word": "ngerulmud",
+    "display": "Ngerulmud",
+    "meaning": "Capital city of Palau."
+  },
+  {
+    "word": "niamey",
+    "display": "Niamey",
+    "meaning": "Capital city of Niger."
+  },
+  {
+    "word": "nicosia",
+    "display": "Nicosia",
+    "meaning": "Capital city of Cyprus."
+  },
+  {
+    "word": "nouakchott",
+    "display": "Nouakchott",
+    "meaning": "Capital city of Mauritania."
+  },
+  {
+    "word": "nukualofa",
+    "display": "Nuku'alofa",
+    "meaning": "Capital city of Tonga."
+  },
+  {
+    "word": "oslo",
+    "display": "Oslo",
+    "meaning": "Capital city of Norway."
+  },
+  {
+    "word": "ottawa",
+    "display": "Ottawa",
+    "meaning": "Capital city of Canada."
+  },
+  {
+    "word": "ouagadougou",
+    "display": "Ouagadougou",
+    "meaning": "Capital city of Burkina Faso."
+  },
+  {
+    "word": "palikir",
+    "display": "Palikir",
+    "meaning": "Capital city of Micronesia."
+  },
+  {
+    "word": "panamacity",
+    "display": "Panama City",
+    "meaning": "Capital city of Panama."
+  },
+  {
+    "word": "paramaribo",
+    "display": "Paramaribo",
+    "meaning": "Capital city of Suriname."
+  },
+  {
+    "word": "paris",
+    "display": "Paris",
+    "meaning": "Capital city of France."
+  },
+  {
+    "word": "phnompenh",
+    "display": "Phnom Penh",
+    "meaning": "Capital city of Cambodia."
+  },
+  {
+    "word": "podgorica",
+    "display": "Podgorica",
+    "meaning": "Capital city of Montenegro."
+  },
+  {
+    "word": "portauprince",
+    "display": "Port-au-Prince",
+    "meaning": "Capital city of Haiti."
+  },
+  {
+    "word": "portlouis",
+    "display": "Port Louis",
+    "meaning": "Capital city of Mauritius."
+  },
+  {
+    "word": "portmoresby",
+    "display": "Port Moresby",
+    "meaning": "Capital city of Papua New Guinea."
+  },
+  {
+    "word": "portofspain",
+    "display": "Port of Spain",
+    "meaning": "Capital city of Trinidad and Tobago."
+  },
+  {
+    "word": "portonovo",
+    "display": "Porto-Novo",
+    "meaning": "Capital city of Benin."
+  },
+  {
+    "word": "portvila",
+    "display": "Port Vila",
+    "meaning": "Capital city of Vanuatu."
+  },
+  {
+    "word": "prague",
+    "display": "Prague",
+    "meaning": "Capital city of Czechia."
+  },
+  {
+    "word": "praia",
+    "display": "Praia",
+    "meaning": "Capital city of Cape Verde."
+  },
+  {
+    "word": "pretoria",
+    "display": "Pretoria",
+    "meaning": "Capital city of South Africa."
+  },
+  {
+    "word": "pyongyang",
+    "display": "Pyongyang",
+    "meaning": "Capital city of North Korea."
+  },
+  {
+    "word": "quito",
+    "display": "Quito",
+    "meaning": "Capital city of Ecuador."
+  },
+  {
+    "word": "rabat",
+    "display": "Rabat",
+    "meaning": "Capital city of Morocco."
+  },
+  {
+    "word": "ramallah",
+    "display": "Ramallah",
+    "meaning": "Capital city of Palestine."
+  },
+  {
+    "word": "reykjavik",
+    "display": "Reykjavik",
+    "meaning": "Capital city of Iceland."
+  },
+  {
+    "word": "riga",
+    "display": "Riga",
+    "meaning": "Capital city of Latvia."
+  },
+  {
+    "word": "riyadh",
+    "display": "Riyadh",
+    "meaning": "Capital city of Saudi Arabia."
+  },
+  {
+    "word": "rome",
+    "display": "Rome",
+    "meaning": "Capital city of Italy."
+  },
+  {
+    "word": "roseau",
+    "display": "Roseau",
+    "meaning": "Capital city of Dominica."
+  },
+  {
+    "word": "saintjohns",
+    "display": "Saint John's",
+    "meaning": "Capital city of Antigua and Barbuda."
+  },
+  {
+    "word": "sanaa",
+    "display": "Sana'a",
+    "meaning": "Capital city of Yemen."
+  },
+  {
+    "word": "sanjose",
+    "display": "San José",
+    "meaning": "Capital city of Costa Rica."
+  },
+  {
+    "word": "sansalvador",
+    "display": "San Salvador",
+    "meaning": "Capital city of El Salvador."
+  },
+  {
+    "word": "santiago",
+    "display": "Santiago",
+    "meaning": "Capital city of Chile."
+  },
+  {
+    "word": "santodomingo",
+    "display": "Santo Domingo",
+    "meaning": "Capital city of Dominican Republic."
+  },
+  {
+    "word": "saotome",
+    "display": "São Tomé",
+    "meaning": "Capital city of São Tomé and Príncipe."
+  },
+  {
+    "word": "sarajevo",
+    "display": "Sarajevo",
+    "meaning": "Capital city of Bosnia and Herzegovina."
+  },
+  {
+    "word": "seoul",
+    "display": "Seoul",
+    "meaning": "Capital city of South Korea."
+  },
+  {
+    "word": "singapore",
+    "display": "Singapore",
+    "meaning": "Capital city of Singapore."
+  },
+  {
+    "word": "skopje",
+    "display": "Skopje",
+    "meaning": "Capital city of North Macedonia."
+  },
+  {
+    "word": "sofia",
+    "display": "Sofia",
+    "meaning": "Capital city of Bulgaria."
+  },
+  {
+    "word": "southtarawa",
+    "display": "South Tarawa",
+    "meaning": "Capital city of Kiribati."
+  },
+  {
+    "word": "srijayawardenepurakotte",
+    "display": "Sri Jayawardenepura Kotte",
+    "meaning": "Capital city of Sri Lanka."
+  },
+  {
+    "word": "stgeorges",
+    "display": "St. George's",
+    "meaning": "Capital city of Grenada."
+  },
+  {
+    "word": "stockholm",
+    "display": "Stockholm",
+    "meaning": "Capital city of Sweden."
+  },
+  {
+    "word": "sucre",
+    "display": "Sucre",
+    "meaning": "Capital city of Bolivia."
+  },
+  {
+    "word": "suva",
+    "display": "Suva",
+    "meaning": "Capital city of Fiji."
+  },
+  {
+    "word": "tallinn",
+    "display": "Tallinn",
+    "meaning": "Capital city of Estonia."
+  },
+  {
+    "word": "tashkent",
+    "display": "Tashkent",
+    "meaning": "Capital city of Uzbekistan."
+  },
+  {
+    "word": "tbilisi",
+    "display": "Tbilisi",
+    "meaning": "Capital city of Georgia."
+  },
+  {
+    "word": "tegucigalpa",
+    "display": "Tegucigalpa",
+    "meaning": "Capital city of Honduras."
+  },
+  {
+    "word": "tehran",
+    "display": "Tehran",
+    "meaning": "Capital city of Iran."
+  },
+  {
+    "word": "thimphu",
+    "display": "Thimphu",
+    "meaning": "Capital city of Bhutan."
+  },
+  {
+    "word": "tirana",
+    "display": "Tirana",
+    "meaning": "Capital city of Albania."
+  },
+  {
+    "word": "tokyo",
+    "display": "Tokyo",
+    "meaning": "Capital city of Japan."
+  },
+  {
+    "word": "tripoli",
+    "display": "Tripoli",
+    "meaning": "Capital city of Libya."
+  },
+  {
+    "word": "tunis",
+    "display": "Tunis",
+    "meaning": "Capital city of Tunisia."
+  },
+  {
+    "word": "ulanbator",
+    "display": "Ulan Bator",
+    "meaning": "Capital city of Mongolia."
+  },
+  {
+    "word": "vaduz",
+    "display": "Vaduz",
+    "meaning": "Capital city of Liechtenstein."
+  },
+  {
+    "word": "valletta",
+    "display": "Valletta",
+    "meaning": "Capital city of Malta."
+  },
+  {
+    "word": "vaticancity",
+    "display": "Vatican City",
+    "meaning": "Capital city of Vatican City."
+  },
+  {
+    "word": "victoria",
+    "display": "Victoria",
+    "meaning": "Capital city of Seychelles."
+  },
+  {
+    "word": "vienna",
+    "display": "Vienna",
+    "meaning": "Capital city of Austria."
+  },
+  {
+    "word": "vientiane",
+    "display": "Vientiane",
+    "meaning": "Capital city of Laos."
+  },
+  {
+    "word": "vilnius",
+    "display": "Vilnius",
+    "meaning": "Capital city of Lithuania."
+  },
+  {
+    "word": "warsaw",
+    "display": "Warsaw",
+    "meaning": "Capital city of Poland."
+  },
+  {
+    "word": "washingtondc",
+    "display": "Washington, D.C.",
+    "meaning": "Capital city of United States."
+  },
+  {
+    "word": "wellington",
+    "display": "Wellington",
+    "meaning": "Capital city of New Zealand."
+  },
+  {
+    "word": "windhoek",
+    "display": "Windhoek",
+    "meaning": "Capital city of Namibia."
+  },
+  {
+    "word": "yamoussoukro",
+    "display": "Yamoussoukro",
+    "meaning": "Capital city of Ivory Coast."
+  },
+  {
+    "word": "yaounde",
+    "display": "Yaoundé",
+    "meaning": "Capital city of Cameroon."
+  },
+  {
+    "word": "yaren",
+    "display": "Yaren",
+    "meaning": "Capital city of Nauru."
+  },
+  {
+    "word": "yerevan",
+    "display": "Yerevan",
+    "meaning": "Capital city of Armenia."
+  },
+  {
+    "word": "zagreb",
+    "display": "Zagreb",
+    "meaning": "Capital city of Croatia."
+  }
+]
